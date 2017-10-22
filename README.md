@@ -1,25 +1,30 @@
 # cloud-music
 
-> An electron-vue project
+> electron-vue 网易云音乐
+
+###### 接口
+```
+https://github.com/Binaryify/NeteaseCloudMusicApi.git
+```
 
 #### Build Setup
 
 ``` bash
-# install dependencies
-npm install
+# 安装依赖
+npm i
 
-# serve with hot reload at localhost:9080
-npm run dev
-
-# build electron application for production
-npm run build
-
-
-# lint all JS/Vue component files in `src/`
-npm run lint
+# 运行
+npm start
 
 ```
 
 ---
+
+###### 预览
+![Preview](./screenshot/1.jpg)
+
+![Preview](./screenshot/2.jpg)
+
+![Preview](./screenshot/4.jpg)
 
 This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html).
