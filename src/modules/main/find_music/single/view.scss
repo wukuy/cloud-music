@@ -1,0 +1,39 @@
+@import '../../../../assets/css/global.scss';
+.p-content{
+    padding: 0;
+    font-size: 14px;
+    color: #3f3f3f;
+    padding: 0 30px;
+    overflow-y: auto;
+    height: calc(100% - 44px);
+    .p-list{
+        ul{
+            li{
+                float: left;
+                margin-right: 18px;
+                width: 180px;
+                overflow: hidden;
+                .p-img{
+                    cursor: pointer;
+                    overflow: hidden;
+                    width: 180px;
+                    height: 180px;
+                    border: 1px solid #c2c6c9;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .p-title{
+                    cursor: pointer;
+                    height: 40px;
+                    margin-top: 8px;
+                    margin-bottom: 30px;
+                }
+            }
+            li:nth-of-type(4n){
+                margin-right: 0;
+            }
+        }
+    }
+}

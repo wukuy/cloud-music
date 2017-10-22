@@ -1,0 +1,26 @@
+<div class="p-content">
+	<dl class="p-list">
+		<dt>推荐</dt>
+		<dd :class="{'p-select': select==0}" @click="menuChange(0)">
+			<i class="iconfont icon-yinle"></i>发现音乐</dd>
+		<dd :class="{'p-select': select==1}" @click="menuChange(1)">
+			<i class="iconfont icon-fm"></i>私人FM</dd>
+		<dd :class="{'p-select': select==2}" @click="menuChange(2)">
+			<i class="iconfont icon-mv"></i>MV</dd>
+		<dd :class="{'p-select': select==3}" @click="menuChange(3)">
+			<i class="iconfont icon-pengyou"></i>朋友</dd>
+		<dt>我的音乐</dt>
+		<dd :class="{'p-select': select==4}" @click="menuChange(4)">
+			<i class="iconfont icon-jiuhuashantubiao-"></i>本地音乐</dd>
+		<dd :class="{'p-select': select==5}" @click="menuChange(5)">
+			<i class="iconfont icon-pengyou"></i>下载管理</dd>
+		<dt>创建的歌单</dt>
+		<dd :class="{'p-select': select==6}" @click="menuChange(6)">
+			<i class="iconfont icon-xihuan"></i>我喜欢的音乐</dd>
+	</dl>
+
+	<!-- 音乐详情 -->
+	<div class="p-music-detail">
+		<music-detail></music-detail>
+	</div>
+</div>

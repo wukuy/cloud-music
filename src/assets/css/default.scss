@@ -1,0 +1,16 @@
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+    background-color: rgba(0,0,0,.0);
+}
+
+/*定义滑块，内阴影及圆角*/
+::-webkit-scrollbar-thumb{
+    border-radius: 4px;
+    background-color: #d8d8d8;
+}
+
+ul{
+    list-style: none;
+}

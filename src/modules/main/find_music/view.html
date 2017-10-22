@@ -1,0 +1,15 @@
+<div class="p-content">
+    <div class="p-native">
+        <ul class="clearfix">
+            <li :class="{'p-select': select===0}" @click="nativeChange(0)">个性推荐</li>
+            <li :class="{'p-select': select===1}" @click="nativeChange(1)">歌单</li>
+            <li :class="{'p-select': select===2}" @click="nativeChange(2)">主播电台</li>
+            <li :class="{'p-select': select===3}" @click="nativeChange(3)">排行榜</li>
+            <li :class="{'p-select': select===4}" @click="nativeChange(4)">歌手</li>
+            <li :class="{'p-select': select===5}" @click="nativeChange(5)">最新音乐</li>
+        </ul>
+    </div>
+    <keep-alive>
+        <router-view></router-view>
+    </keep-alive>
+</div>

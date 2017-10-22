@@ -1,0 +1,272 @@
+@import '../../../assets/css/global.scss';
+.p-content{
+    padding: 0;
+    font-size: 12px;
+    color: #3f3f3f;
+    overflow-y: auto;
+    height: calc(100% - 44px);
+    /* 详情 */
+    .p-detail-box{
+        padding: 20px 30px 0 30px;
+        .p-img{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #e6e6e6;
+            float: left; 
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .p-detail{
+            overflow-x: hidden;
+            padding-left: 30px;
+            color: #666;
+            .p-title{
+                .p-name{
+                    font-size: 22px;
+                    float: left;
+                    width: 70%;
+                    color: #333;
+                }
+                >.p-right{
+                    float: right;
+                    width: 30%;
+                    margin-top: 10px;
+                    text-align: right;
+                    >span{
+                        display: inline-block;
+                        vertical-align: middle;
+                        .icon-music{
+                            font-size: 12px;
+                            float: left;
+                            margin-top: -1px;
+                        }
+                        .iconfont{
+                            margin-right: 6px;
+                        }
+                    }
+                    >span:nth-of-type(1){
+                        margin-right: 20px;
+                    }
+                }
+            }
+            .p-creator{
+                margin-top: 14px;
+                .p-head-img{
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                >div{
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 8px;
+                }
+                .p-create-people{
+                    font-size: 14px;
+                    color: #666;
+                }
+                .p-create-time{
+                    font-size: 12px;
+                    color: #999;
+                }
+            }
+            .p-menu{
+                margin-top: 14px;
+                li{
+                    background: #fff;
+                    color: #333;
+                    margin-right: 10px;
+                    height: 24px;
+                    line-height: 24px;
+                    float: left;
+                    border: 1px solid #e1e1e2;
+                    border-radius: 4px;
+                    padding: 0 10px;
+                    cursor: pointer;
+                    i{
+                        margin-right: 2px;
+                    }
+                }
+                li:first-child{
+                    i{
+                        color: #b82525;
+                    }
+                }
+            }
+            .p-tag{
+                margin-top: 14px;
+            }
+            .p-synopsis{
+                margin-top: 14px;
+            }
+        }
+    }
+
+    /* 歌曲列表 */
+    .p-list-box{
+        position: relative;
+        margin-top: 60px;
+        font-size: 12px;
+        >ul{
+            padding-left: 30px; 
+            >li{
+                float: left;
+                margin-left: 4px;
+                >span{
+                    padding: 0 14px;
+                    height: 28px;
+                    line-height: 28px;
+                    border: 1px solid #e1e1e2;
+                    border-bottom: 0;
+                    background: #fff;
+                    border-bottom: none;
+                    display: inline-block;
+                    cursor: pointer;
+                }
+                >div{
+                    top: 29px;
+                    left: 0;
+                    position: absolute;
+                    width: 100%;
+                    border-top: 1px solid $c_main;
+                }
+            }
+        }
+
+        /* 当前选中 */
+        .p-current{
+            background: $c_main;
+            border-color: $c_main;
+            color: #FFF;
+        }
+
+        /* 播放列表 */
+        .p-list{
+            .p-table{
+                width: 100%;
+                padding-bottom: 30px;
+                tr{
+                    height: 28px;
+                    line-height: 28px;
+                }
+                th{
+                    font-weight: normal;
+                    color: #6c6c6c;
+                    padding-left: 10px;
+                    border-right: 1px solid #e1e1e2;
+                    border-bottom: 1px solid #e1e1e2;
+                }
+                th:last-of-type{
+                    border-right: none;
+                }
+                tr:nth-of-type(2n){
+                    background: #f5f5f7;
+                }
+                tr:nth-of-type(n+2){
+                    td{
+                        position: relative;
+                        padding-left: 10px;
+                        color: #666;
+                        .p-play-state{
+                            color: $c_main;
+                            text-align: left;
+                            position: absolute;
+                            top: 3px;
+                            right: 3px;
+                            width: 20px;
+                            .icon-laba{
+                                font-size: 13px;
+                            }
+                            .p-pause{
+                                overflow: hidden;
+                                width: 9px;
+                                display: inline-flex;
+                            }
+                        }
+                    }
+                    td:nth-of-type(1){
+                        color: #9d9d9d;
+                        text-align: right;
+                        padding-right: 10px;
+                    }
+                    td:nth-of-type(2){
+                        color: #9d9d9d;
+                        text-align: center;
+                        .icon-xihuan{
+                            font-size: 14px;
+                            margin-right: 6px;
+                        }
+                        .icon-xiazai{
+                            font-size: 18px;
+                        }
+                    }
+                    td:nth-of-type(3){
+                        color: #333;
+                    }
+                }
+                tr:nth-of-type(n+2):hover{
+                    background: #ecedee;
+                }
+                .p-select{
+                    background: #e5e5e7 !important;
+                    color: #181819;
+                }
+                
+            }
+        }
+        
+    }
+
+    /* 评论列表 */
+    .p-comment-box{
+        .p-comment{
+            box-sizing: border-box;
+            padding: 20px 30px;
+            .p-new-comment,.p-hot-comment{
+                .p-title{
+                    color: #666;
+                    font-size: 14px;
+                    margin-top: 36px;
+                    margin-bottom: 10px;
+                    display: inline-block;
+                }
+                li{
+                    border-top: 1px solid #f0f0f0;
+                    padding: 20px 0 18px 0;
+                    .p-img-box{
+                        float: left;
+                        img{
+                            width: 38px;
+                            height: 38px;
+                            border-radius: 50%;
+                        }
+                    }
+                    .p-content-box{
+                        overflow: hidden;
+                        padding-left: 15px;
+                        .p-name{
+                            color: #0f75c2;
+                        }
+                        .p-txt{
+                            color: #333;
+                        }
+                        .p-time{
+                            margin-top: 6px;
+                            color: #999;
+                        }
+                    }
+                }
+    
+            }
+        }
+
+    }
+
+}
