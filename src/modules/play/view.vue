@@ -1,4 +1,4 @@
-<style lang="scss" scoped src="./view.scss">
+<style lang="scss" src="./view.scss">
 </style>
 <template lang="html" src="./view.html"></template>
 
@@ -7,6 +7,7 @@ import Model from './view.model.js'
 import Utils from 'common/app.utils.js'
 
 import progressBar from 'components/ui/progress_bar/view.vue'
+import { Slider } from 'element-ui'
 
 export default {
 	name: 'landing-page',
@@ -16,7 +17,9 @@ export default {
 			playState: false,
 			playId: '',
 			playUrl: false,
-			playEle: ''
+			playEle: '',
+			playProgress: 2,
+			soundSize: 2
 		}
 	},
 	methods: {
@@ -43,7 +46,8 @@ export default {
 		}
 	},
 	components: {
-		progressBar
+		progressBar,
+		'el-slider': Slider
 	},
 	watch: {
 		'$store.state.play': {

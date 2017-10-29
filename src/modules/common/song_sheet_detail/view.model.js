@@ -12,7 +12,7 @@ export default {
 		return result
 	},
 
-	// 歌曲评论 
+	// 歌曲评论
 	getComment: async function (options) {
 		options = {
 			params: options

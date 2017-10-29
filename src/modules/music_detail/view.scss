@@ -54,6 +54,8 @@
             }
         }
     }
+
+    /* 全屏显示 */
     .p-full{
         position: fixed;
         width: 100%;
@@ -87,7 +89,11 @@
             margin-left: -435px;
             .p-left-box{
                 float: left;
+                position: relative;
                 .p-cassette{
+                    position: absolute;
+                    top: 114px;
+                    left: 0;
                     img{
                         width: 210px;
                         height: 210px;
@@ -99,6 +105,7 @@
                 width: 426px;
                 float: right;
                 margin-top: 32px;
+                position: relative;
                 .p-song-info{
                     .p-name{
                         font-size: 22px;
@@ -131,6 +138,32 @@
                             line-height: 34px;
                             color: #333;
                         }
+                    }
+                }
+                .p-full-btn{
+                    position: absolute;
+                    top: 0;
+                    right: -80px;
+                    border: 1px solid #e2e2e2;
+                    width: 40px;
+                    height: 26px;
+                    outline: none;
+                    border-radius: 4px;
+                    background: rgba(0,0,0, 0);
+                    cursor: pointer;
+                    .iconfont{
+                        color: #666666;
+                        font-size: 8px;
+                        position: absolute;
+                        transform: rotate(8deg);
+                    }
+                    .icon-top-right-arrow{
+                        left: 8px;
+                        bottom: 4px;
+                    }
+                    .icon-bottom-left-arrow-copy{
+                        right: 8px;
+                        top: 4px;
                     }
                 }
             }

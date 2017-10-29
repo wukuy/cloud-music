@@ -6,6 +6,7 @@ import router from './router'
 import 'common/app.init.js'
 import Vuex from 'vuex'
 import stores from './store.js'
+import './assets/css/animate.css'
 
 Vue.use(Vuex)
 

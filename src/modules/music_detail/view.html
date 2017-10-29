@@ -34,7 +34,6 @@
             </div>
             <!-- 内容 -->
             <div class="p-content clearfix">
-                <button @click="full=false">小化</button>
                 <div class="p-left-box">
                     <div class="p-cassette">
                         <img :src="detail.al.picUrl">
@@ -65,6 +64,10 @@
                             </li>
                         </ul>
                     </div>
+                    <button class="p-full-btn" @click="full=false">
+                        <span class="iconfont icon-top-right-arrow"></span>
+                        <span class="iconfont icon-bottom-left-arrow-copy"></span>
+                    </button>
                 </div>
             </div>
         </div>

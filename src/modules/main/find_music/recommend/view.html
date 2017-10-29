@@ -1,3 +1,112 @@
-<div class="p-content">
-   推荐
+<div class="p-recommend">
+    <!-- banner -->
+    <u-slide :data="banner"/>
+
+    <!-- 推荐歌单 -->
+    <div class="p-recommend-song p-box">
+        <div class="p-title">
+            <p class="p-name">推荐歌单</p>
+            <span class="p-more">更多></span>
+        </div>
+        <ul class="clearfix">
+            <li class="p-item-box" v-for="(item,index) in recommendSong">
+                <div class="p-item" @click="detail(item.id)" @mouseleave="item.isShow=false" @mouseenter="item.isShow=true">
+                    <transition name="slide">
+                        <p class="p-txt animated g-ellipsis-two" v-show="item.isShow">{{item.copywriter}}</p>
+                    </transition>
+                    <div class="p-play-count" v-show="!item.isShow">
+                        <i class="iconfont icon-n"></i>
+                        {{item.playCount > 10000 ? (item.playCount/10000).toFixed(0) + '万' : item.playCount}}
+                    </div>
+                    <div class="p-img">
+                        <img :src="item.picUrl" alt="">
+                        <transition name="fade-enter">
+                            <i class="iconfont icon-play" v-show="item.isShow"></i>
+                        </transition>
+                    </div>
+                    <p class="p-name g-ellipsis-two">{{item.name}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 独家放送 -->
+    <div class="p-broadcast-song p-box">
+        <div class="p-title">
+            <p class="p-name">独家放送</p>
+            <span class="p-more">更多></span>
+        </div>
+        <ul class="clearfix">
+            <li class="p-item-box" v-for="(item,index) in broadcast">
+                <div class="p-item">
+                    <div class="p-img">
+                        <img :src="item.picUrl" alt="">
+                    </div>
+                    <p class="p-name">{{item.name}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 最新音乐 -->
+    <div class="p-new-music p-box">
+        <div class="p-title">
+            <p class="p-name">最新音乐</p>
+            <span class="p-more">更多></span>
+        </div>
+        <ul>
+            <li class="clearfix" v-for="(item,idx) in newMusic">
+                <div class="p-img">
+                    <span class="p-number">
+                        {{++idx < 10 ? '0' + idx : idx }}
+                    </span>
+                    <img :src="item.song.album.picUrl" alt="">
+                </div>
+               <div class="p-detail">
+                    <p class="p-name">{{item.name}}</p>
+                    <p class="p-singer">{{item.song.artists[0].name}}</p>
+               </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 推荐MV -->
+    <div class="p-recommend-mv p-box">
+        <div class="p-title">
+            <p class="p-name">推荐MV</p>
+            <span class="p-more">更多></span>
+        </div>
+        <ul class="clearfix">
+            <li class="p-item-box" v-for="(item,index) in mv">
+                <div class="p-item">
+                    <div class="p-img">
+                        <img :src="item.picUrl" alt="">
+                    </div>
+                    <p class="p-name">{{item.name}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 主播电台 -->
+    <div class="p-radio-station p-box">
+        <div class="p-title">
+            <p class="p-name">主播电台</p>
+            <span class="p-more">更多></span>
+        </div>
+        <!-- <ul>
+            <li class="clearfix" v-for="(item,idx) in radioStation">
+                <div class="p-img">
+                    <span class="p-number">
+                        {{++idx < 10 ? '0' + idx : idx }}
+                    </span>
+                    <img :src="item.song.album.picUrl" alt="">
+                </div>
+                <div class="p-detail">
+                    <p class="p-name">{{item.name}}</p>
+                    <p class="p-singer">{{item.song.artists[0].name}}</p>
+                </div>
+            </li>
+        </ul> -->
+    </div>
 </div>

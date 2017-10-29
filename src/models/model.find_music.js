@@ -6,7 +6,7 @@ export default {
 		url: '/top/playlist'
 	}),
 
-	// 获取歌单
+	// 获取歌单详情
 	getSongSheetDetail: new Http({
 		url: '/playlist/detail'
 	}),
@@ -24,5 +24,35 @@ export default {
 	// 获取音乐歌词
 	getMusicelyric: new Http({
 		url: '/lyric'
+	}),
+
+	// 获取banner
+	getBanner: new Http({
+		url: '/banner'
+	}),
+
+	// 获取推荐歌单
+	getRecommendSong: new Http({
+		url: '/personalized'
+	}),
+
+	// 独家放送
+	getBroadcast: new Http({
+		url: '/personalized/privatecontent'
+	}),
+
+	// 最新音乐
+	getNewMusic: new Http({
+		url: '/personalized/newsong'
+	}),
+
+	// 推荐MV
+	getRecommendMv: new Http({
+		url: '/personalized/mv'
+	}),
+
+	// 主播电台
+	getRadioStation: new Http({
+		url: '/personalized/djprogram'
 	})
 }

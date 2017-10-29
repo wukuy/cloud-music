@@ -25,7 +25,7 @@ export default [
 		name: 'recommend',
 		component: recommend
 	},
-	// 歌曲 
+	// 歌曲
 	{
 		path: 'singer',
 		name: 'singer',

@@ -94,6 +94,7 @@
                     </table>
                 </div>
             </li>
+
             <!-- 评论列表 -->
             <li class="p-comment-box">
                 <span :class="select==='comment' && 'p-current'" @click="select='comment'">评论({{data.playlist.commentCount}})</span>
@@ -140,6 +141,7 @@
                     </div>
                 </div>
             </li>
+
             <!-- 收藏者列表 -->
             <li class="p-collect">
                 <span :class="select==='collect' && 'p-current'" @click="select='collect'">收藏者</span>

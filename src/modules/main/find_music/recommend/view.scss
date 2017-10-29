@@ -1,0 +1,251 @@
+@import '../../../../assets/css/global.scss';
+/* 公共部分 */
+.p-box{
+    padding-bottom: 46px;
+    .p-title{
+        position: relative;
+        .p-name{
+            font-size: 18px;
+            color: #333;
+            border-bottom: 1px solid #e1e1e2;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+    }
+    .p-more{
+        position: absolute;
+        top: 2px;
+        right: 0;
+        color: #666;
+        font-size: 12px;
+        cursor: pointer;
+    }
+    >*:nth-child(2){
+        color: #333;
+    }
+}
+
+
+.p-recommend{
+    padding: 20px 30px 0;
+    /* 推荐歌单 */
+    .p-recommend-song{
+        ul{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: calc(100% + 20px);
+            .p-item-box{
+                width: 20%;
+                list-style: none;
+                .p-item{
+                    cursor: pointer;
+                    padding-right: 20px;
+                    position: relative;
+                    overflow: hidden;
+                    .p-txt{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: calc(100% - 20px);
+                        padding: 4px;
+                        color: #FFF;
+                        background: rgba(0,0,0,.5);
+                        box-sizing: border-box;
+                        font-size: 12px;
+                        z-index: 1;
+                    }
+                    .p-play-count{
+                        position: absolute;
+                        z-index: 2;
+                        padding: 2px 6px;
+                        right: 20px;
+                        top: 0;
+                        background:-webkit-linear-gradient(0deg, rgba(255,255,255,0)0%,rgba(0,0,0,.6)100%);
+                        color: #FFF;
+                    }
+                    .p-img{
+                        position: relative;
+                        img{
+                            width: 100%;
+                        }
+                        .icon-play{
+                            position: absolute;
+                            bottom: 10px;
+                            right: 8px;
+                            font-size: 26px;
+                            color: #FFF;
+                            background: rgba(0,0,0,.4);
+                            border-radius: 50%;
+                            overflow: hidden;
+                            height: 26px;
+                            width: 26px;
+                        }
+                        .icon-play::before{
+                            position: absolute;
+                            top: -1px;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+            .p-item-box:nth-of-type(n+6){
+                display: none;
+            }
+        }
+    }
+
+    /* 独家放送 */
+    .p-broadcast-song{
+        ul{
+            width: calc(100% + 20px);
+            display: flex;
+            flex-flow: row wrap;
+            .p-item-box{
+                width: 33.3333%;
+                //float: left;
+                list-style: none;
+                .p-item{
+                    cursor: pointer;
+                    padding-right: 20px;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    /* 最新音乐 */
+    .p-new-music{
+        ul{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 300px;
+            border: 1px solid #eee;
+            li{
+                cursor: pointer;
+                height: 60px;
+                border-right: 1px solid #eee;
+                .p-img{
+                    line-height: 60px;
+                    float: left;
+                    .p-number{
+                        width: 40px;
+                        display: inline-block;
+                        text-align: center;
+                        color: #999;
+                    }
+                    img{
+                        border: 1px solid #eee;
+                        height: 39px;
+                        width: 39px;
+                    }
+                    *{
+                        vertical-align: middle;
+                    }
+                }
+                .p-detail{
+                    overflow: hidden;
+                    margin-top: 14px;
+                    padding-left: 10px;
+                    .p-name{
+                        font-size: 12px;
+                        color: #333;
+                        margin-bottom: 4px;
+                    }
+                    .p-singer{
+                        font-size: 12px;
+                        color: #666;
+                    }
+                }
+            }
+            li:nth-of-type(n+6){
+                border-right: none;
+            }
+            li:nth-of-type(2),li:nth-of-type(4),li:nth-of-type(7),li:nth-of-type(9){
+                background: #f5f5f7;
+            }
+            li:hover{
+                background: #ecedee;
+            }
+        }
+    }
+
+    /* 推荐MV */
+    .p-recommend-mv{
+        .p-item-box{
+            width: 33.3333%;
+            float: left;
+            list-style: none;
+            .p-item{
+                cursor: pointer;
+                padding-right: 20px;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+        .p-item-box:nth-of-type(3n) .p-item{
+            padding: 0;
+        }
+    }
+
+    /* 主播电台 */
+    .p-new-music{
+        ul{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 300px;
+            border: 1px solid #eee;
+            li{
+                cursor: pointer;
+                height: 60px;
+                border-right: 1px solid #eee;
+                .p-img{
+                    line-height: 60px;
+                    float: left;
+                    .p-number{
+                        width: 40px;
+                        display: inline-block;
+                        text-align: center;
+                        color: #999;
+                    }
+                    img{
+                        border: 1px solid #eee;
+                        height: 39px;
+                        width: 39px;
+                    }
+                    *{
+                        vertical-align: middle;
+                    }
+                }
+                .p-detail{
+                    overflow: hidden;
+                    margin-top: 14px;
+                    padding-left: 10px;
+                    .p-name{
+                        font-size: 12px;
+                        color: #333;
+                        margin-bottom: 4px;
+                    }
+                    .p-singer{
+                        font-size: 12px;
+                        color: #666;
+                    }
+                }
+            }
+            li:nth-of-type(n+6){
+                border-right: none;
+            }
+            li:nth-of-type(2),li:nth-of-type(4),li:nth-of-type(7),li:nth-of-type(9){
+                background: #f5f5f7;
+            }
+            li:hover{
+                background: #ecedee;
+            }
+        }
+    }
+}
