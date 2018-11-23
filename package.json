@@ -1,8 +1,8 @@
 {
-  "name": "electron-music",
+  "name": "electron-vue-build",
   "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
+  "description": "this is a electron + vue build",
+  "main": "./dist/index.js",
   "author": {
     "name": "wukuy",
     "email": "964453362@qq.com"
@@ -10,7 +10,7 @@
   "homepage": "https://github.com/wukuy",
   "scripts": {
     "dev": "webpack --config ./build/webpack.dev.js",
-    "start": "node ./src/main/server/app.js & node ./build/webpack.dev.js",
+    "start": "node ./build/webpack.dev.js",
     "build": "node ./build/webpack.prod.js && electron-builder ",
     "build:deb": "node ./build/webpack.prod.js  && electron-builder --linux deb",
     "build:web": "node ./build/webpack.prod.js"
@@ -26,18 +26,17 @@
   "keywords": [],
   "license": "ISC",
   "devDependencies": {
-    "babel-polyfill": "^6.26.0",
     "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^1.0.1",
     "electron": "^3.0.8",
     "electron-builder": "^20.36.2",
     "file-loader": "^2.0.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
-    "intelli-espower-loader": "^1.0.1",
-    "mocha": "^5.1.1",
-    "power-assert": "^1.5.0",
-    "style-loader": "^0.23.1",
+    "progress-bar-webpack-plugin": "^1.11.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
     "url-loader": "^1.1.2",
     "vue-loader": "^15.4.2",
     "vue-template-compiler": "^2.5.17",
@@ -46,9 +45,6 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
-    "apicache": "^1.2.1",
-    "express": "^4.16.3",
-    "request": "^2.85.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"
   }
