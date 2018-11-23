@@ -1,8 +1,9 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = env => {
     return {
-        mode: 'development',
+        mode: env,
         devtool: 'none',
         target: 'electron-main',
         entry: {
@@ -20,6 +21,11 @@ module.exports = env => {
                 exclude: /node_modules/,
               }
             ]
-        }
+        },
+        plugins: [
+            new CopyWebpackPlugin([
+                {from: './server', to: './server'}
+            ])
+        ]
     }
 }

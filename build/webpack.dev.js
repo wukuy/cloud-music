@@ -32,7 +32,8 @@ function startRendere() {
             new ProgressBarWebpackPlugin(),
             new FriendlyErrorsWebpackPlugin({
                 compilationSuccessInfo: {
-                    messages: [`Your application is running`, `web server ${url}:${port}`],
+                    messages: [`Your application is running`],
+                    notes: [`web server ${url}:${port}`, `api server http://localhost:8211`]
                 },
             })
         ]);

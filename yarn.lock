@@ -277,6 +277,11 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
+apicache@^1.2.3:
+  version "1.2.3"
+  resolved "http://registry.npm.taobao.org/apicache/download/apicache-1.2.3.tgz#00909d2ad37c78822d01a4628162ab7c42fb0a77"
+  integrity sha1-AJCdKtN8eIItAaRigWKrfEL7Cnc=
+
 app-builder-bin@2.5.1:
   version "2.5.1"
   resolved "http://registry.npm.taobao.org/app-builder-bin/download/app-builder-bin-2.5.1.tgz#a5bcff31e4572d8a179bd88a1335bad8e5d62d81"
@@ -1842,7 +1847,7 @@ expand-brackets@^2.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-express@^4.16.2:
+express@^4.16.2, express@^4.16.4:
   version "4.16.4"
   resolved "http://registry.npm.taobao.org/express/download/express-4.16.4.tgz#fddef61926109e24c515ea97fd2f1bdbf62df12e"
   integrity sha1-/d72GSYQniTFFeqX/S8b2/Yt8S4=
@@ -4399,7 +4404,7 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request@^2.45.0:
+request@^2.45.0, request@^2.88.0:
   version "2.88.0"
   resolved "http://registry.npm.taobao.org/request/download/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
   integrity sha1-nC/KT301tZLv5Xx/ClXoEFIST+8=

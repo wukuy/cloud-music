@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron');
+const apiServer = require('./server/app');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -20,6 +21,8 @@ function createWindow() {
 
 	// 打开开发者工具
 	isDev && win.webContents.openDevTools();
+
+	apiServer.listen(8211, () => {});
 
 	// 当 window 被关闭，这个事件会被触发。
 	win.on('closed', () => {

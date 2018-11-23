@@ -8,7 +8,7 @@ module.exports = env => {
         mode: env,
         devtool: 'none',
         entry: {
-            index: './src/renderer/main.js',
+            main: './src/renderer/main.js',
         },
         target: env == 'development' ? 'web' : 'electron-renderer',
         output: {
@@ -22,13 +22,7 @@ module.exports = env => {
                     use: 'vue-loader'
                 },
                 {
-                    test: /\.css$/,
-                    use: [
-                        'css-loader'
-                    ]
-                },
-                {
-                    test: /\.styl(us)?$/,
+                    test: /\.css|.styl(us)?$/,
                     use: [
                         'vue-style-loader',
                         'css-loader',
@@ -63,7 +57,7 @@ module.exports = env => {
             }),
             new CleanWebpackPlugin('./dist/*', {
                 root: path.resolve(__dirname, '../')
-            }),
+            })
         ],
         resolve: {
             alias: {
