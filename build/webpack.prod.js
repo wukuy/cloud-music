@@ -1,31 +1,33 @@
-const mainConfig = require('./webpack.main');
-const rendererConfig = require('./webpack.renderer');
+const MainConfig = require('./webpack.main');
+const RendererConfig = require('./webpack.renderer');
 const webpack = require('webpack');
 
 function startMain() {
     return new Promise((resolve, reject) => {
-        // mainConfig.mode = 'production';
-        const complier = webpack(mainConfig);
+        const complier = webpack(MainConfig('production'));
 
         complier.hooks.afterEmit.tap('after-emit', () => {
             resolve();
         });
-        complier.run(()=> {
-            console.log('main compile done');
+        complier.run((err, stats) => {
+            console.log(stats.toString({
+                colors: true
+            }));
         });
     });
 }
 
 function startRenderer() {
     return new Promise((resolve, reject) => {
-        rendererConfig.mode = 'production';
-        const complier = webpack(rendererConfig);
+        const complier = webpack(RendererConfig('production'));
 
         complier.hooks.afterEmit.tap('after-emit', () => {
             resolve();
         });
-        complier.run(() => {
-            console.log('renderer compile done');
+        complier.run((err, stats) => {
+            console.log(stats.toString({
+                colors: true
+            }));
         });
     });
 }

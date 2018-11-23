@@ -1,6 +1,4 @@
-const { app, BrowserWindow } = __non_webpack_require__('electron');
-
-const server = __non_webpack_require__('./server/app');
+const { app, BrowserWindow } = require('electron');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -18,15 +16,10 @@ function createWindow() {
 		? `http://localhost:8210`
 		: `file://${__dirname}/index.html`
 
-	console.log(winURL);
-	win.loadURL(`file://${__dirname}/index.html`);
+	win.loadURL(winURL);
 
 	// 打开开发者工具
 	isDev && win.webContents.openDevTools();
-
-	server.listen(4000, 'localhost', () => {
-		console.log('服务启动成功');
-	});
 
 	// 当 window 被关闭，这个事件会被触发。
 	win.on('closed', () => {

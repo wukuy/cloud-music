@@ -1,22 +1,25 @@
 const path = require('path');
-const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-module.exports = {
-    mode: 'development',
-    devtool: false,
-    target: 'electron-main',
-    entry: {
-        index: ['./src/main/index.js']
-    },
-    output: {
-        filename: '[name].js',
-        path: path.join(__dirname, '../dist')
-    },
-    // webpack 对 __dirname 进行了处理. 所以需要禁用.
-    // https://www.webpackjs.com/configuration/node/#node-__dirname
-    node: {
-        __dirname: false,
-        __filename: false,
-    },
+module.exports = env => {
+    return {
+        mode: 'development',
+        devtool: 'none',
+        target: 'electron-main',
+        entry: {
+            index: './src/main/index.js'
+        },
+        output: {
+            filename: '[name].js',
+            path: path.join(__dirname, '../dist')
+        },
+        module: {
+            rules: [
+              {
+                test: /\.js$/,
+                type: "javascript/esm",
+                exclude: /node_modules/,
+              }
+            ]
+        }
+    }
 }

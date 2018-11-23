@@ -1,10 +1,12 @@
 const webpack = require('webpack');
-const rendererConfig = require('./webpack.renderer');
-const mainConfig = require('./webpack.main');
+const RendererConfig = require('./webpack.renderer');
+const MainConfig = require('./webpack.main');
 const { spawn } = require('child_process');
 const electron = require('electron');
 const path = require('path');
-const webpackDevServer = require('webpack-dev-server');
+const WebpackDevServer = require('webpack-dev-server');
+const ProgressBarWebpackPlugin = require('progress-bar-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 // electron 进程
 let electronProcess = null;
@@ -15,21 +17,35 @@ let isMainRefresh = null;
 function startRendere() {
     return new Promise((resolve, reject) => {
         const options = {
+            quiet: true,
             contentBase: './dist',
             hot: true,
             host: 'localhost',
-            clientLogLevel: 'none'
+            clientLogLevel: 'none',
         };
+        const port = 8210;
+        const url = `http://localhost`;
 
-        webpackDevServer.addDevServerEntrypoints(rendererConfig, options);
+        let rendererConfig = RendererConfig('development');
+        rendererConfig.plugins.push(...[
+            new webpack.HotModuleReplacementPlugin(),
+            new ProgressBarWebpackPlugin(),
+            new FriendlyErrorsWebpackPlugin({
+                compilationSuccessInfo: {
+                    messages: [`Your application is running`, `web server ${url}:${port}`],
+                },
+            })
+        ]);
+
+        WebpackDevServer.addDevServerEntrypoints(rendererConfig, options);
         const compiler = webpack(rendererConfig);
         
         compiler.hooks.afterEmit.tap('after-emit', () => {
             resolve();
         });
 
-        const server = new webpackDevServer(compiler, options);
-        server.listen(8210, 'localhost');
+        const server = new WebpackDevServer(compiler, options);
+        server.listen(port);
     });
 }
 
@@ -37,10 +53,10 @@ function startRendere() {
 function startElectron () {
     electronProcess = spawn(electron, ['--inspect=5860', path.resolve(__dirname, '../dist/index.js')])
     electronProcess.stdout.on('data', (data) => {
-        console.log(`stdout: ${data}`);
+        // console.log(`stdout: ${data}`);
     });
     electronProcess.stderr.on('data', (data) => {
-        console.log(`stderr: ${data}`);
+        // console.log(`stderr: ${data}`);
     });
     electronProcess.on('close', () => {
         if(!isMainRefresh) process.exit()
@@ -50,16 +66,13 @@ function startElectron () {
 // 启动主进程编译
 function startMain() {
     return new Promise((resolve, reject) => {
-        const compiler = webpack(mainConfig);
+        const compiler = webpack(MainConfig('development'));
         compiler.hooks.afterEmit.tap('after-emit', () => {
             resolve();
         });
 
         compiler.watch({}, (err, stats) => {
-            console.log(stats.toString({
-                // 增加控制台颜色开关
-                colors: true
-            }));
+            console.log(stats.toString('errors-only'));
             
             if(electronProcess) {
                 isMainRefresh = true;
