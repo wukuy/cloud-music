@@ -7,6 +7,7 @@ const path = require('path');
 const WebpackDevServer = require('webpack-dev-server');
 const ProgressBarWebpackPlugin = require('progress-bar-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const { getApiServer } = require('./utils.js');
 
 // electron 进程
 let electronProcess = null;
@@ -40,7 +41,7 @@ function startRendere() {
 
         WebpackDevServer.addDevServerEntrypoints(rendererConfig, options);
         const compiler = webpack(rendererConfig);
-        
+
         compiler.hooks.afterEmit.tap('after-emit', () => {
             resolve();
         });
@@ -51,7 +52,7 @@ function startRendere() {
 }
 
 // 启动electron
-function startElectron () {
+function startElectron() {
     electronProcess = spawn(electron, ['--inspect=5860', path.resolve(__dirname, '../dist/index.js')])
     electronProcess.stdout.on('data', (data) => {
         // console.log(`stdout: ${data}`);
@@ -60,7 +61,7 @@ function startElectron () {
         // console.log(`stderr: ${data}`);
     });
     electronProcess.on('close', () => {
-        if(!isMainRefresh) process.exit()
+        if (!isMainRefresh) process.exit()
     })
 }
 
@@ -74,8 +75,8 @@ function startMain() {
 
         compiler.watch({}, (err, stats) => {
             console.log(stats.toString('errors-only'));
-            
-            if(electronProcess) {
+
+            if (electronProcess) {
                 isMainRefresh = true;
 
                 process.kill(electronProcess.pid);
@@ -89,13 +90,15 @@ function startMain() {
 }
 
 function run() {
-    Promise.all([startRendere(), startMain()])
-    .then((data) => {
-        startElectron();
-    })
-    .catch((err) => {
-        console.log(err);
-    });
+    getApiServer().then(() => {
+        Promise.all([startRendere(), startMain()])
+            .then((data) => {
+                startElectron();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }).catch(() => { });
 }
 
 run();
