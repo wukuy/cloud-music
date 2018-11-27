@@ -89,8 +89,9 @@ function startMain() {
     });
 }
 
-function run() {
-    getApiServer().then(() => {
+async function run() {
+    let result = await getApiServer();
+    if (result) {
         Promise.all([startRendere(), startMain()])
             .then((data) => {
                 startElectron();
@@ -98,7 +99,7 @@ function run() {
             .catch((err) => {
                 console.log(err);
             });
-    }).catch(() => { });
+    }
 }
 
 run();

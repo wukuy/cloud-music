@@ -28,6 +28,7 @@
   "devDependencies": {
     "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.6.0",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
     "electron": "^3.0.8",
     "electron-builder": "^20.36.2",
@@ -35,7 +36,7 @@
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
     "progress-bar-webpack-plugin": "^1.11.0",
-    "request": "^2.88.0",
+    "style-loader": "^0.23.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "url-loader": "^1.1.2",
@@ -48,6 +49,7 @@
   "dependencies": {
     "apicache": "^1.2.3",
     "express": "^4.16.4",
+    "request": "^2.88.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1"
   }

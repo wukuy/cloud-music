@@ -13,7 +13,7 @@ module.exports = env => {
         target: env == 'development' ? 'web' : 'electron-renderer',
         output: {
             filename: '[name].js',
-            path: path.resolve(__dirname, '../dist')
+            path: path.resolve(__dirname, '../dist'),
         },
         module: {
             rules: [
@@ -22,7 +22,14 @@ module.exports = env => {
                     use: 'vue-loader'
                 },
                 {
-                    test: /\.css|.styl(us)?$/,
+                    test: /\.css$/,
+                    use: [
+                        'style-loader',
+                        'css-loader',
+                    ]
+                },
+                {
+                    test: /\.styl(us)?$/,
                     use: [
                         'vue-style-loader',
                         'css-loader',
@@ -36,7 +43,6 @@ module.exports = env => {
                             loader: 'url-loader',
                             options: {
                                 limit: 8192,
-                                publicPath: '../../',
                                 name(file) {
                                     let dirName = 'assets/font/';
                                     if(/\.(gif|jpg|png)$/.test(file)) dirName = 'assets/images/';
