@@ -1,10 +1,5 @@
-<template>
-    <div>
-        <i class="fa fa-cog fa-spin fa-5x"></i>
-        <div title="我是提示语音">xxxxxxxx</div>
-        {{title}}
-    </div>
-</template>
+<template src="./view.html"></template>
+<style src="./view.styl" lang="stylus" scoped></style>
 
 <script>
 export default {

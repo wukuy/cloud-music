@@ -4,9 +4,11 @@ const MainConfig = require('./webpack.main');
 const { spawn } = require('child_process');
 const electron = require('electron');
 const path = require('path');
-const WebpackDevServer = require('webpack-dev-server');
+const express = require('express');
 const ProgressBarWebpackPlugin = require('progress-bar-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const webpackDevMiddleware = require("webpack-dev-middleware");
+const webpackHotMiddleware = require("webpack-hot-middleware");
 const { getApiServer } = require('./utils.js');
 
 // electron 进程
@@ -26,6 +28,7 @@ function startRendere() {
         };
         const port = 8210;
         const url = `http://localhost`;
+        const app = express();
 
         let rendererConfig = RendererConfig('development');
         rendererConfig.plugins.push(...[
@@ -39,15 +42,26 @@ function startRendere() {
             })
         ]);
 
-        WebpackDevServer.addDevServerEntrypoints(rendererConfig, options);
-        const compiler = webpack(rendererConfig);
+        const complier = webpack(rendererConfig);
 
-        compiler.hooks.afterEmit.tap('after-emit', () => {
+        let devMiddleware = webpackDevMiddleware(complier, {
+            logLevel: 'silent' //向控制台显示任何内容 
+        })
+        
+        let hotMiddleware = webpackHotMiddleware(complier, {
+           log: false,
+           heartbeat: 2000,
+        })
+
+        complier.hooks.afterEmit.tap('after-emit', () => {
             resolve();
         });
+        
+        app.use(devMiddleware);
+        app.use(hotMiddleware);
 
-        const server = new WebpackDevServer(compiler, options);
-        server.listen(port);
+        app.listen(port, 'localhost', () => {});
+
     });
 }
 

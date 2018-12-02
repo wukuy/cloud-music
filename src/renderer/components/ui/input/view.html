@@ -1,0 +1,5 @@
+<div :class="classes" @input="handleChange">
+    <slot name="prefix"></slot>
+    <input type="text" :value="val" :placeholder="placeholder">
+    <slot name="suffix"></slot>
+</div>

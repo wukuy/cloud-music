@@ -1,14 +1,18 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import home from '@view/home/view.vue';
+import Home from '@view/home/view.vue';
+import Example from '@components/example/index.vue';
 
 Vue.use(VueRouter);
 
 let router = new VueRouter({
     routes: [{
         path: '/',
-        component: home
+        component: Home
+    }, {
+        path: '/example',
+        component: Example
     }]
 });
 

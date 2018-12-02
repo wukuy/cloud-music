@@ -1,0 +1,55 @@
+@import '~@assets/css/define.styl';
+
+.p-home{
+    height: 100%;
+    .p-title{
+        height: 50px;
+        line-height: @height;
+        background: $primary-color;
+        display: flex;
+        color: #fff;
+        padding: 0 24px;
+        .p-logo{
+            width: 178px;
+        }
+        .p-search{
+            flex: 1;
+            >*{
+                vertical-align: middle;
+            }
+            .p-record{
+                border-color: rgba(0,0,0,.2);
+                .c-button{
+                    padding: 0 8px;
+                    height: 22px;
+                    line-height: 22px;
+                    color: rgba(255,255,255, .6);
+                }
+                .c-button+.c-button{
+                    border-color: rgba(0,0,0,.2);
+                }
+            }
+        }
+        .p-menu{
+            .c-icon{
+                width: 24px;
+                text-align: center;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .p-main{
+        display: flex;
+        height: calc(100% - 50px);
+        .p-nav{
+            width: 200px;
+            border-right: 1px solid $border-color;
+            height: 100%;
+        }
+        .p-content{
+            flex: 1;
+            height: 100%;
+        }
+    }
+}
