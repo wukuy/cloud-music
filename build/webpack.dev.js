@@ -37,7 +37,7 @@ function startRendere() {
             new FriendlyErrorsWebpackPlugin({
                 compilationSuccessInfo: {
                     messages: [`Your application is running`],
-                    notes: [`web server ${url}:${port}`, `api server http://localhost:8211`]
+                    notes: [`web server ${url}:${port}`, `api server http://localhost:8212`]
                 },
             })
         ]);
@@ -45,7 +45,7 @@ function startRendere() {
         const complier = webpack(rendererConfig);
 
         let devMiddleware = webpackDevMiddleware(complier, {
-            logLevel: 'silent' //向控制台显示任何内容 
+            logLevel: 'silent'
         })
         
         let hotMiddleware = webpackHotMiddleware(complier, {

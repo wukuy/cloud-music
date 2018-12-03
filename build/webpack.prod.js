@@ -20,7 +20,7 @@ function startMain() {
 
 function startRenderer() {
     return new Promise((resolve, reject) => {
-        const complier = webpack(RendererConfig('development'));
+        const complier = webpack(RendererConfig('production'));
 
         complier.hooks.afterEmit.tap('after-emit', () => {
             resolve();
