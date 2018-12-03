@@ -15,17 +15,32 @@
             <Search />
         </div>
         <div class="p-menu">
-            <Icon name="github"/>
+            <Icon name="github" />
             <Icon name="envelope-o" />
-            <Icon name="gear"/>
-            <Icon name="window-minimize" title="最小化"/>
-            <Icon name="window-maximize" title="最大化"/>
-            <Icon name="times" title="关闭"/>
+            <Icon name="gear" />
+            <Icon name="window-minimize" title="最小化" />
+            <Icon name="window-maximize" title="最大化" />
+            <Icon name="times" title="关闭" />
         </div>
     </div>
 
     <div class="p-main">
-        <div class="p-nav"></div>
-        <div class="p-content"></div>
+        <div class="p-nav">
+            <dl v-for="item in navList">
+                <dt class="p-classes">{{item.classesName}}</dt>
+                <dd v-for="menu in item.menus" class="p-menu">{{menu.name}}</dd>
+            </dl>
+        </div>
+        <div class="p-content">
+            <p><a href="/#/example" target="_blank" rel="noopener noreferrer">example</a></p>
+        </div>
+    </div>
+
+    <div class="p-play-wrap">
+        <div class="p-play-ctrl">
+            <Button class="p-up" shape="circle" type="primary"><Icon name="step-backward" /></Button>
+            <Button class="p-play" shape="circle" type="primary" @click="play = !play"><Icon :name="play ? 'play' : 'pause'"/></Button>
+            <Button class="p-next" shape="circle" type="primary"><Icon name="step-forward"/></Button>
+        </div>
     </div>
 </div>
