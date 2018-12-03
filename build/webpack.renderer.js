@@ -8,15 +8,25 @@ module.exports = env => {
         mode: env,
         devtool: 'none',
         entry: {
-            main: './src/renderer/main.js',
+            main: ['./src/renderer/main.js', 'webpack-hot-middleware/client?noInfo=true&reload=true']
         },
-        target: env == 'development' ? 'web' : 'electron-renderer',
+        // target: env == 'development' ? 'web' : 'electron-renderer',
         output: {
             filename: '[name].js',
             path: path.resolve(__dirname, '../dist'),
         },
         module: {
             rules: [
+                {
+                    test: /\.js$/,
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env'],
+                            plugins: ['transform-es2015-modules-commonjs']
+                        }
+                    }
+                },
                 {
                     test: /\.vue$/,
                     use: 'vue-loader'

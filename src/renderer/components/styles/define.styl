@@ -1,0 +1,40 @@
+$primary-color = #e83c3c;
+$info-color = #2d8cf0;
+$defaut-color = #fff;
+
+// 默认button
+$btn-defualt-border = $border-color;
+$btn-defualt-bg = #fff;
+$btn-default-text = #333;
+
+// primary
+$btn-primary-border = $primary-color;
+$btn-primary-bg = $primary-color;
+$btn-primary-text = #fff;
+
+// info
+$btn-info-border = $info-color;
+$btn-info-bg = $info-color;
+$btn-info-text = #fff;
+
+// disabled
+$btn-disabled-text = #c5c8ce;
+$btn-disabled-bg = #f7f7f7;
+$btn-disabled-border = #dcdee2;
+
+$border-color = #bfbfbf;
+
+$border-radius = 4px;
+
+$transition-time = .3s;
+
+// 清除浮动
+$clear() {
+    &:after{
+        content:"";
+        display:block;
+        clear:both;
+        visibility:hidden;
+        height:0
+    }
+}

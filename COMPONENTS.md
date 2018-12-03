@@ -2,9 +2,8 @@
 
 ### Button 按钮
 > 参考 muse ui  点击水纹效果
-
-### tab tab切换
-### icon  图标
+### Tab 切换
+### Icon  图标
 ### Collapse 折叠面板
 ### Carousel 走马灯
 ### Layout 布局
