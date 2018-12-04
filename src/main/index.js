@@ -24,7 +24,6 @@ function createWindow() {
 
 	// 启动api server
 	exec('cross-env PORT=8212 node dist/server/app.js');
-	console.log('执行');
 
 	// 当 window 被关闭，这个事件会被触发。
 	win.on('closed', () => {

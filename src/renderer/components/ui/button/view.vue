@@ -35,8 +35,6 @@ export default {
     },
     methods: {
         handleClick() {
-            console.log('执行1');
-            
             this.$emit('click');
         }
     }
