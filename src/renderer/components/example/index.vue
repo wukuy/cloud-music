@@ -11,6 +11,8 @@ import ButtonExample from './button.vue';
 import IconExample from './icon.vue';
 import InputExample from './input.vue';
 import SearchExample from './search.vue';
+import CardExample from './card.vue';
+import HistoryExample from './history.vue';
 
 export default {
     data() {
@@ -28,6 +30,12 @@ export default {
             }, {
                 text: 'search',
                 exampleName: 'SearchExample'
+            }, {
+                text: 'card',
+                exampleName: 'CardExample'
+            },  {
+                text: 'history',
+                exampleName: 'HistoryExample'
             }]
         }
     },
@@ -40,7 +48,9 @@ export default {
         ButtonExample,
         IconExample,
         InputExample,
-        SearchExample
+        SearchExample,
+        CardExample,
+        HistoryExample
     }
 }
 </script>

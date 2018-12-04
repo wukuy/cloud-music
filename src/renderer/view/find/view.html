@@ -1,0 +1,10 @@
+<div class="p-find">
+    <ul>
+        <li v-for="(item, idx) in navList" :key="idx">
+            <router-link v-if="item.path" :to="item.path">
+                <span>{{item.name}}</span>
+            </router-link>
+        </li>
+    </ul>
+    <router-view></router-view>
+</div>

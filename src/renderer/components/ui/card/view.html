@@ -1,0 +1,13 @@
+<div :class="classes">
+    <div class="c-title-wrap">
+        <h3 class="c-title">{{title}}</h3>
+        <div class="p-right-slot">
+            <slot name="titleRight">
+            </slot>
+        </div>
+    </div>
+
+    <div class="c-content">
+        <slot></slot>
+    </div>
+</div>

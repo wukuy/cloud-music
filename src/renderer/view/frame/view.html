@@ -4,14 +4,7 @@
             网易云音乐
         </div>
         <div class="p-search">
-            <ButtonGroup class="p-record">
-                <Button ghost>
-                    <Icon name="chevron-left"></Icon>
-                </Button>
-                <Button ghost>
-                    <Icon name="chevron-right"></Icon>
-                </Button>
-            </ButtonGroup>
+            <History class="p-history"></History>
             <Search />
         </div>
         <div class="p-menu">
@@ -28,11 +21,15 @@
         <div class="p-nav">
             <dl v-for="item in navList">
                 <dt class="p-classes">{{item.classesName}}</dt>
-                <dd v-for="menu in item.menus" class="p-menu">{{menu.name}}</dd>
+                <router-link v-if="menu.path" :to="menu.path" tag="dd" v-for="(menu, idx) in item.menus" class="p-menu" :key="idx">
+                    <Icon :name="menu.icon"></Icon>
+                    <span>{{menu.name}}</span>
+                </router-link>
             </dl>
         </div>
         <div class="p-content">
-            <p><a href="/#/example" target="_blank" rel="noopener noreferrer">example</a></p>
+            <p><a href="/#/example" rel="noopener noreferrer">example</a></p>
+            <router-view></router-view>
         </div>
     </div>
 

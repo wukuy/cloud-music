@@ -4,6 +4,8 @@ import ButtonGroup from './ui/button-group/view.vue';
 import Icon from './ui/icon/view.vue';
 import Input from './ui/input/view.vue';
 import Search from './ui/search/view.vue';
+import Card from './ui/card/view.vue';
+import History from './ui/history/view.vue';
 
 const components = {
     Button,
@@ -11,6 +13,8 @@ const components = {
     Icon,
     Input,
     Search,
+    Card,
+    History,
     install
 };
 
