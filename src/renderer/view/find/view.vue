@@ -2,6 +2,8 @@
 <style src="./view.styl" lang="stylus" scoped></style>
 
 <script>
+import {getxxx} from '@model/find.js';
+
 export default {
     data() {
         return {
@@ -34,6 +36,9 @@ export default {
         }
     },
     methods: {
+    },
+    async mounted() {
+        await getxxx();
     }
 }
 </script>

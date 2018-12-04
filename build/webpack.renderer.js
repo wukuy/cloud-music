@@ -17,16 +17,21 @@ module.exports = env => {
         },
         module: {
             rules: [
-                {
+                /* {
                     test: /\.js$/,
                     use: {
                         loader: 'babel-loader',
                         options: {
                             presets: ['@babel/preset-env'],
-                            plugins: ['transform-es2015-modules-commonjs']
+                            plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/plugin-transform-runtime']
                         }
                     }
-                },
+                }, */
+                {
+                    test: /\.js$/,
+                    type: "javascript/esm",
+                    exclude: /node_modules/,
+                  },
                 {
                     test: /\.vue$/,
                     use: 'vue-loader'
@@ -80,6 +85,7 @@ module.exports = env => {
                 'vue$': 'vue/dist/vue.esm.js',
                 '@': path.resolve(__dirname, '../src'),
                 '@assets': path.resolve(__dirname, '../src/renderer/assets'),
+                '@model': path.resolve(__dirname, '../src/renderer/model'),
                 '@common':  path.resolve(__dirname, '../src/renderer/common'),
                 '@components': path.resolve(__dirname, '../src/renderer/components'),
                 '@routes': path.resolve(__dirname, '../src/renderer/routes'),
