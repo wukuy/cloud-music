@@ -19,11 +19,13 @@ module.exports = env => {
             rules: [
                 {
                     test: /\.js$/,
+                    exclude: /node_modules/,
                     use: {
                         loader: 'babel-loader',
                         options: {
                             presets: ['@babel/preset-env'],
-                            plugins: ["transform-es2015-modules-commonjs"]
+                            plugins: ["transform-es2015-modules-commonjs"],
+                            cacheDirectory: true
                         }
                     }
                 },

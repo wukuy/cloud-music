@@ -1,9 +1,11 @@
 const { app, BrowserWindow } = require('electron');
-const {exec} = require('child_process');
+const { exec, spawn } = require('child_process');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win
+
+let apiServer
 
 function createWindow() {
 	// 创建浏览器窗口。
@@ -23,7 +25,18 @@ function createWindow() {
 	isDev && win.webContents.openDevTools();
 
 	// 启动api server
-	exec('cross-env PORT=8212 node dist/server/app.js');
+	apiServer = spawn('cross-env', ['PORT=8212', 'node', 'dist/server/app.js']);
+	apiServer.stdout.on('data', (data) => {
+		console.log(`stdout: ${data}`);
+	});
+
+	apiServer.stderr.on('data', (data) => {
+		console.log(`stderr: ${data}`);
+	});
+
+	apiServer.on('close', (code) => {
+		console.log(`子进程退出码：${code}`);
+	});
 
 	// 当 window 被关闭，这个事件会被触发。
 	win.on('closed', () => {
@@ -44,6 +57,8 @@ app.on('window-all-closed', () => {
 	// 在 macOS 上，除非用户用 Cmd + Q 确定地退出，
 	// 否则绝大部分应用及其菜单栏会保持激活。
 	if (process.platform !== 'darwin') {
+		process.kill(apiServer.pid);
+		process.exit(0);
 		app.quit()
 	}
 })
