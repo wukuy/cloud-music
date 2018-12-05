@@ -8,7 +8,7 @@ module.exports = env => {
         mode: env,
         devtool: 'none',
         entry: {
-            main: ['./src/renderer/main.js', 'webpack-hot-middleware/client?noInfo=true&reload=true']
+            main: ['@babel/polyfill', './src/renderer/main.js', 'webpack-hot-middleware/client?noInfo=true&reload=true']
         },
         // target: env == 'development' ? 'web' : 'electron-renderer',
         output: {
@@ -17,24 +17,19 @@ module.exports = env => {
         },
         module: {
             rules: [
-                /* {
+                {
                     test: /\.js$/,
                     use: {
                         loader: 'babel-loader',
                         options: {
                             presets: ['@babel/preset-env'],
-                            plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/plugin-transform-runtime']
+                            plugins: ["transform-es2015-modules-commonjs"]
                         }
                     }
-                }, */
-                {
-                    test: /\.js$/,
-                    type: "javascript/esm",
-                    exclude: /node_modules/,
-                  },
+                },
                 {
                     test: /\.vue$/,
-                    use: 'vue-loader'
+                    loader: 'vue-loader'
                 },
                 {
                     test: /\.css$/,

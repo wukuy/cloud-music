@@ -38,7 +38,7 @@ export default {
     methods: {
     },
     async mounted() {
-        await getxxx();
+        console.log(await getxxx());
     }
 }
 </script>
