@@ -21,7 +21,7 @@ class Http {
         // 添加响应拦截器
         Axios.interceptors.response.use(function (response) {
             // 对响应数据做点什么
-            return response;
+            return response.data;
         }, function (error) {
             // 对响应错误做点什么
             return Promise.reject(error);
@@ -31,7 +31,6 @@ class Http {
 
 export default function (config) {
     config.url = `${Config.baseUrl}:${Config.port}${config.url}`;
-    console.log(config.url);
-
+    config.params = config.data;
     return new Http(config);
 }

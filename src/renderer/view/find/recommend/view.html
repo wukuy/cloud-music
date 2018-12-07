@@ -1,4 +1,13 @@
 <div class="p-recommend">
     <div class="p-banner"></div>
-    
+
+    <Card title="推荐歌单">
+        <div slot="titleRight">更多></div>
+        <div class="p-list">
+            <div class="p-item" v-for="item in recommendList" @click="goPlaylistDetail(item.id)">
+                <img :src="item.picUrl" class="p-cover">
+                <p class="p-name">{{item.name}}</p>
+            </div>
+        </div>
+    </Card>
 </div>

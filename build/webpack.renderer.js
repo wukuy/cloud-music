@@ -82,7 +82,7 @@ module.exports = env => {
                 'vue$': 'vue/dist/vue.esm.js',
                 '@': path.resolve(__dirname, '../src'),
                 '@assets': path.resolve(__dirname, '../src/renderer/assets'),
-                '@model': path.resolve(__dirname, '../src/renderer/model'),
+                '@models': path.resolve(__dirname, '../src/renderer/models'),
                 '@common':  path.resolve(__dirname, '../src/renderer/common'),
                 '@components': path.resolve(__dirname, '../src/renderer/components'),
                 '@routes': path.resolve(__dirname, '../src/renderer/routes'),

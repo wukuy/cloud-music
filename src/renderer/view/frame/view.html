@@ -28,7 +28,7 @@
             </dl>
         </div>
         <div class="p-content">
-            <p><a href="/#/example" rel="noopener noreferrer">example</a></p>
+            <!-- <p><a href="/#/example" rel="noopener noreferrer">example</a></p> -->
             <router-view></router-view>
         </div>
     </div>
@@ -38,6 +38,11 @@
             <Button class="p-up" shape="circle" type="primary"><Icon name="step-backward" /></Button>
             <Button class="p-play" shape="circle" type="primary" @click="play = !play"><Icon :name="play ? 'play' : 'pause'"/></Button>
             <Button class="p-next" shape="circle" type="primary"><Icon name="step-forward"/></Button>
+        </div>
+        <div class="p-play-bar">
+            <audio controls>
+                <source src="http://m10.music.126.net/20181208020412/689184b8922a00323d12e1637e77f4ef/ymusic/2aa4/fecd/e8e1/e2161291398f4402d487679716c9b7b2.mp3" type="audio/mpeg">
+            </audio>
         </div>
     </div>
 </div>

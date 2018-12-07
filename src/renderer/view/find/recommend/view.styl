@@ -1,5 +1,22 @@
 @import '~@assets/css/define.styl';
 
 .p-recommend{
-    
+    .p-list{
+        padding: 10px;
+        .p-item{
+            width: calc(20% - 10px);
+            min-height: calc(20% - 10px);
+            overflow: hidden;
+            margin: 0 5px;
+            float: left;
+            cursor: pointer;
+            .p-cover{
+                width: 100%;
+            }
+            .p-name{
+                height: 32px;
+                $textOverflow(2);
+            }
+        }
+    }
 }

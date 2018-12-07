@@ -1,5 +1,5 @@
 <div class="p-find">
-    <ul>
+    <ul class="p-tabs">
         <li v-for="(item, idx) in navList" :key="idx">
             <router-link v-if="item.path" :to="item.path">
                 <span>{{item.name}}</span>

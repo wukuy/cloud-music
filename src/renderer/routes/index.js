@@ -5,6 +5,7 @@ import FindRouter from './find.js';
 import FMRouter from './fm.js';
 import FriendRouter from './friend.js';
 import MVRouter from './mv.js';
+import PlaylistDetail from '@view/find/playlist-detail/view.vue';
 
 Vue.use(VueRouter);
 
@@ -17,7 +18,11 @@ let router = new VueRouter({
         FindRouter,
         FMRouter,
         FriendRouter,
-        MVRouter
+        MVRouter,
+        {
+            path: '/playlist_detail',
+            component: PlaylistDetail
+        }
     ]
 });
 
