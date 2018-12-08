@@ -13,6 +13,7 @@ import InputExample from './input.vue';
 import SearchExample from './search.vue';
 import CardExample from './card.vue';
 import HistoryExample from './history.vue';
+import MenuExample from './menu.vue';
 
 export default {
     data() {
@@ -36,6 +37,9 @@ export default {
             },  {
                 text: 'history',
                 exampleName: 'HistoryExample'
+            },   {
+                text: 'menu',
+                exampleName: 'MenuExample'
             }]
         }
     },
@@ -50,7 +54,8 @@ export default {
         InputExample,
         SearchExample,
         CardExample,
-        HistoryExample
+        HistoryExample,
+        MenuExample
     }
 }
 </script>

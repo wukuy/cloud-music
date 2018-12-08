@@ -19,31 +19,22 @@
 
     <div class="p-main">
         <div class="p-nav">
-            <dl v-for="item in navList">
-                <dt class="p-classes">{{item.classesName}}</dt>
-                <router-link v-if="menu.path" :to="menu.path" tag="dd" v-for="(menu, idx) in item.menus" class="p-menu" :key="idx">
-                    <Icon :name="menu.icon"></Icon>
-                    <span>{{menu.name}}</span>
-                </router-link>
-            </dl>
+            <Menu>
+                <MenuGroup :title="item.classesName"  v-for="(item, idx) in navList" :key="idx">
+                    <MenuItem v-for="(menu, idx) in item.menus" :key="idx">
+                        <router-link :to="menu.path" tag="div">
+                            <Icon :name="menu.icon"></Icon>
+                            <span>{{menu.name}}</span>
+                        </router-link>
+                    </MenuItem>
+                </MenuGroup>
+            </Menu>
         </div>
         <div class="p-content">
-            <!-- <p><a href="/#/example" rel="noopener noreferrer">example</a></p> -->
+            <p><a href="/#/example" rel="noopener noreferrer">example</a></p>
             <router-view></router-view>
         </div>
     </div>
 
-    <div class="p-play-wrap">
-        <div class="p-play-ctrl">
-            <Button class="p-up" shape="circle" type="primary"><Icon name="step-backward" /></Button>
-            <Button class="p-play" shape="circle" type="primary" @click="play = !play"><Icon :name="play ? 'play' : 'pause'"/></Button>
-            <Button class="p-next" shape="circle" type="primary"><Icon name="step-forward"/></Button>
-        </div>
-        <div class="p-play-bar">
-            {{playUrl}}
-            <audio controls>
-                <source src="http://m10.music.126.net/20181208131119/6b9be19ce508a0000710477a0e949564/ymusic/ts/free/4d43be5a93b6994b1b548868a0bb12f0.mp3" type="audio/mpeg">
-            </audio>
-        </div>
-    </div>
+    <PlayCtrl />
 </div>

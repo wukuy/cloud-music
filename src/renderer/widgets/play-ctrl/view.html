@@ -1,0 +1,29 @@
+<div class="w-play-wrap">
+    <div class="w-play-ctrl">
+        <Button class="w-up" shape="circle" type="primary" @click="upPlay">
+            <Icon name="step-backward" />
+        </Button>
+        
+        <Button class="w-play" shape="circle" type="primary" @click="pauseAndPlay">
+            <Icon :name="play ? 'play' : 'pause'" />
+        </Button>
+        
+        <Button class="w-next" shape="circle" type="primary">
+            <Icon name="step-forward" />
+        </Button>
+    </div>
+    <div class="w-play-bar">
+        <audio controls autoplay="autoplay" ref="playDom">
+            <source :src="musicUrl" type="audio/ogg" />
+            <source :src="musicUrl" type="audio/mpeg" />
+        </audio>
+    </div>
+    <div class="w-volume-ctrl">
+        音量控制
+    </div>
+    <div class="w-menu">
+        <div>歌词</div>
+        <div @click="openPlayList">歌单</div>
+        <Playlist ref="playList"/>
+    </div>
+</div>

@@ -2,7 +2,7 @@
 <style src="./view.styl" lang="stylus"></style>
 
 <script>
-import {getMusicUrl} from '@models/find.js';
+import PlayCtrl from '@widgets/play-ctrl/view.vue';
 
 export default {
     data() {
@@ -36,14 +36,26 @@ export default {
                 {
                     classesName: '我的音乐',
                     menus: [
-                        {name: '本地音乐'},
-                        {name: '下载管理'},
+                        {
+                            name: '本地音乐',
+                            icon: 'feed',
+                            path: '/fm'
+                        },
+                        {
+                            name: '下载管理',
+                            icon: 'feed',
+                            path: '/fm'
+                        },
                     ]
                 },
                 {
                     classesName: '创建的歌单',
                     menus: [
-                        {name: '我喜欢的音乐'},
+                        {
+                            name: '我喜欢的音乐',
+                            icon: 'feed',
+                            path: '/fm'
+                        },
                     ]
                 },
             ],
@@ -56,13 +68,16 @@ export default {
         musicInfo () {
             return this.$store.state
         },
-        async playUrl(state) {
-            if(!state.id) return;
-            let data = await getMusicUrl({id: state.id});
-            if(data && data.length) {
-                return data[0].url;
+        musicUrl() {
+            let playDom = this.$refs.playDom;
+            if(playDom) {
+                playDom.load()
             }
+            return this.$store.state.url;
         }
+    },
+    components: {
+        PlayCtrl
     }
 }
 </script>

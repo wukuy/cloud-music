@@ -21,7 +21,7 @@ export default {
             }
         },
         playMusic(item) {
-            this.$store.commit('musicInfo', {
+            this.$store.commit('setMusicInfo', {
                 name: item.name,
                 id: item.id
             });

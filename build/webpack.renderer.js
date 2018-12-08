@@ -88,6 +88,7 @@ module.exports = env => {
                 '@routes': path.resolve(__dirname, '../src/renderer/routes'),
                 '@view': path.resolve(__dirname, '../src/renderer/view'),
                 '@store': path.resolve(__dirname, '../src/renderer/store'),
+                '@widgets': path.resolve(__dirname, '../src/renderer/widgets'),
             }
         },
         optimization: {
