@@ -56,8 +56,12 @@ export default {
         musicInfo () {
             return this.$store.state
         },
-        playUrl() {
-            return this.$store.getters.playUrl;
+        async playUrl(state) {
+            if(!state.id) return;
+            let data = await getMusicUrl({id: state.id});
+            if(data && data.length) {
+                return data[0].url;
+            }
         }
     }
 }
