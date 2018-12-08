@@ -38,11 +38,11 @@
             <Button class="p-up" shape="circle" type="primary"><Icon name="step-backward" /></Button>
             <Button class="p-play" shape="circle" type="primary" @click="play = !play"><Icon :name="play ? 'play' : 'pause'"/></Button>
             <Button class="p-next" shape="circle" type="primary"><Icon name="step-forward"/></Button>
-            {{count}}
         </div>
         <div class="p-play-bar">
+            {{playUrl}}
             <audio controls>
-                <source src="http://m10.music.126.net/20181208020412/689184b8922a00323d12e1637e77f4ef/ymusic/2aa4/fecd/e8e1/e2161291398f4402d487679716c9b7b2.mp3" type="audio/mpeg">
+                <source src="http://m10.music.126.net/20181208131119/6b9be19ce508a0000710477a0e949564/ymusic/ts/free/4d43be5a93b6994b1b548868a0bb12f0.mp3" type="audio/mpeg">
             </audio>
         </div>
     </div>

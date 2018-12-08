@@ -2,6 +2,8 @@
 <style src="./view.styl" lang="stylus"></style>
 
 <script>
+import {getMusicUrl} from '@models/find.js';
+
 export default {
     data() {
         return {
@@ -51,8 +53,11 @@ export default {
     methods: {
     },
     computed: {
-        count () {
-            return this.$store.state.count
+        musicInfo () {
+            return this.$store.state
+        },
+        playUrl() {
+            return this.$store.getters.playUrl;
         }
     }
 }

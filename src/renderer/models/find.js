@@ -8,5 +8,9 @@ module.exports = {
     playlistDetail: (data) => Http({
         url: '/playlist/detail',
         data
-    })
+    }),
+    getMusicUrl: (data) => Http({
+        url: '/song/url',
+        data
+    }),
 }

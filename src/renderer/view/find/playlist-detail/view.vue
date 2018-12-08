@@ -20,8 +20,11 @@ export default {
                 this.playlist = data.playlist.tracks;
             }
         },
-        playMusic() {
-            console.log(this.$store.commit('increment'));
+        playMusic(item) {
+            this.$store.commit('musicInfo', {
+                name: item.name,
+                id: item.id
+            });
         }
     },
     created() {
