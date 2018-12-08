@@ -3,14 +3,15 @@ import Axios from 'axios';
 
 class Http {
     constructor(config) {
+        this.instance = Axios.create();
         this.setInterceptors();
-        return Axios(config);
+        return this.instance.request(config);
     }
 
     // 设置拦截器
     setInterceptors() {
         // 添加请求拦截器
-        Axios.interceptors.request.use(function (config) {
+        this.instance.interceptors.request.use(function (config) {
             // 在发送请求之前做些什么
             return config;
         }, function (error) {
@@ -19,7 +20,7 @@ class Http {
         });
 
         // 添加响应拦截器
-        Axios.interceptors.response.use(function (response) {
+        this.instance.interceptors.response.use(function (response) {
             // 对响应数据做点什么
             return response.data;
         }, function (error) {

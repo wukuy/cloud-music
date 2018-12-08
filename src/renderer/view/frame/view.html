@@ -38,6 +38,7 @@
             <Button class="p-up" shape="circle" type="primary"><Icon name="step-backward" /></Button>
             <Button class="p-play" shape="circle" type="primary" @click="play = !play"><Icon :name="play ? 'play' : 'pause'"/></Button>
             <Button class="p-next" shape="circle" type="primary"><Icon name="step-forward"/></Button>
+            {{count}}
         </div>
         <div class="p-play-bar">
             <audio controls>

@@ -19,6 +19,9 @@ export default {
             if(data) {
                 this.playlist = data.playlist.tracks;
             }
+        },
+        playMusic() {
+            console.log(this.$store.commit('increment'));
         }
     },
     created() {

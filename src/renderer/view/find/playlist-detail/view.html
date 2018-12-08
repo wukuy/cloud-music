@@ -8,7 +8,7 @@
     </div>
     <div class="p-table">
         <ul>
-            <li v-for="item in playlist">
+            <li v-for="item in playlist" @click="playMusic(item.id)">
                 {{item.id}}
             </li>
         </ul>

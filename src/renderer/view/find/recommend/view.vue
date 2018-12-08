@@ -17,7 +17,7 @@ export default {
         async personalized() {
             let data = await personalized();
             if(data) {
-                this.recommendList = data;
+                this.recommendList = data.result;
             }
         },
         goPlaylistDetail(id) {
