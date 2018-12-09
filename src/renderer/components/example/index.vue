@@ -14,6 +14,8 @@ import SearchExample from './search.vue';
 import CardExample from './card.vue';
 import HistoryExample from './history.vue';
 import MenuExample from './menu.vue';
+import TableExample from './table.vue';
+import TabsExample from './tabs.vue';
 
 export default {
     data() {
@@ -37,9 +39,15 @@ export default {
             },  {
                 text: 'history',
                 exampleName: 'HistoryExample'
-            },   {
+            }, {
                 text: 'menu',
                 exampleName: 'MenuExample'
+            }, {
+                text: 'table',
+                exampleName: 'TableExample'
+            }, {
+                text: 'tabs',
+                exampleName: 'TabsExample'
             }]
         }
     },
@@ -55,7 +63,9 @@ export default {
         SearchExample,
         CardExample,
         HistoryExample,
-        MenuExample
+        MenuExample,
+        TableExample,
+        TabsExample
     }
 }
 </script>

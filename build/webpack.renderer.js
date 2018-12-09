@@ -24,7 +24,7 @@ module.exports = env => {
                         loader: 'babel-loader',
                         options: {
                             presets: ['@babel/preset-env'],
-                            plugins: ["transform-es2015-modules-commonjs"],
+                            plugins: ["transform-es2015-modules-commonjs", "transform-vue-jsx"],
                             cacheDirectory: true
                         }
                     }

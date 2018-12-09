@@ -9,6 +9,9 @@ import History from './ui/history/view.vue';
 import Menu from './ui/menu/view.vue';
 import MenuGroup from './ui/menu-group/view.vue';
 import MenuItem from './ui/menu-item/view.vue';
+import Table from './ui/table/view.vue';
+import TableCol from './ui/table-col/view.vue';
+import Tabs from './ui/tabs/view.vue';
 
 const components = {
     Button,
@@ -21,6 +24,9 @@ const components = {
     Menu,
     MenuGroup,
     MenuItem,
+    Table,
+    TableCol,
+    Tabs,
     install,
 };
 
