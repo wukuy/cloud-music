@@ -28,6 +28,14 @@ $border-radius = 4px;
 
 $transition-time = .3s;
 
+$border($dir=all, $color=$border-color, $width=1px){
+    if($dir=='all') {
+        border: $width solid $color;
+    }else {
+        border-{$dir}: $width solid $color;
+    }
+}
+
 // 清除浮动
 $clear() {
     &:after{

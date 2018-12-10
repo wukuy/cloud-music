@@ -1,3 +1,8 @@
 <div :class="classes">
-    tabs
+    <ul>
+        <li v-for="(item, idx) in data" @click="handleClick(item, idx)" :class="[`${prefix}-item`, {[`${prefix}-item-active`]: item.$active}]">
+            <span v-if="!useSlotScope">{{item.text}}</span>
+            <slot v-else :item="item"></slot>
+        </li>
+    </ul>
 </div>

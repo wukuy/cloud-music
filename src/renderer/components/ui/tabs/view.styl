@@ -3,4 +3,60 @@
 $prefix = c-tabs;
 
 .{$prefix}{
+    position: relative;
+    &&-line{
+        $clear();
+        height: 42px;
+        line-height: 42px;
+        $border(bottom, $primary-color);
+        color: #333;
+        .{$prefix}-item{
+            float: left;
+            cursor: pointer;
+            padding: 0 20px;
+            position: relative;
+            &:hover{
+                color: $primary-color;
+            }
+            &-active{
+                color: $primary-color;
+            }
+            &-active::after{
+                content: "";
+                display: block;
+                position: absolute;
+                $border(bottom, $primary-color, 2px);
+                bottom: 0;
+                width: 100%;
+                left: 0;
+            }
+        }
+    }
+    &&-card{
+        $clear();
+        $border(bottom, $primary-color);
+        color: #333;
+        font-size: 12px;
+        .{$prefix}-item{
+            float: left;
+            cursor: pointer;
+            padding: 0 10px;
+            position: relative;
+            margin: 0 4px;
+            $border();
+            border-bottom: none;
+            height: 30px;
+            line-height: 30px;
+            &:hover{
+                background: darken(#fff, 6);
+            }
+            &-active{
+                color: $primary-color;
+                $border(, $primary-color);
+                border-bottom: none;
+                background: $primary-color !important;
+                color: #fff;
+            }
+        }
+    }
 }
