@@ -12,6 +12,7 @@ import MenuItem from './ui/menu-item/view.vue';
 import Table from './ui/table/view.vue';
 import TableCol from './ui/table-col/view.vue';
 import Tabs from './ui/tabs/view.vue';
+import Slider from './ui/slider/view.vue';
 
 const components = {
     Button,
@@ -27,6 +28,7 @@ const components = {
     Table,
     TableCol,
     Tabs,
+    Slider,
     install,
 };
 

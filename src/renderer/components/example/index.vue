@@ -16,6 +16,7 @@ import HistoryExample from './history.vue';
 import MenuExample from './menu.vue';
 import TableExample from './table.vue';
 import TabsExample from './tabs.vue';
+import SliderExample from './slider.vue';
 
 export default {
     data() {
@@ -48,6 +49,9 @@ export default {
             }, {
                 text: 'tabs',
                 exampleName: 'TabsExample'
+            },  {
+                text: 'slider',
+                exampleName: 'SliderExample'
             }]
         }
     },
@@ -65,7 +69,8 @@ export default {
         HistoryExample,
         MenuExample,
         TableExample,
-        TabsExample
+        TabsExample,
+        SliderExample
     }
 }
 </script>

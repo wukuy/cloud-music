@@ -1,0 +1,18 @@
+<div :class="`${prefix}-wrap`">
+    <div :class="`${prefix}-prefix`">
+        <slot name="prefix"></slot>
+    </div>
+    <div :class="classes">
+        <div :class="`${prefix}-bar`">
+           <div :class="`${prefix}-bar-ctrl`" @mousedown="ctrlMousedown" @mousedup="ctrlMouseup">
+                <div :class="`${prefix}-tip`">
+                    <span>12:00</span>
+                    <slot name="tip"></slot>        
+                </div>
+           </div> 
+        </div>
+    </div>
+    <div :class="`${prefix}-suffix`">
+        <slot name="suffix"></slot>
+    </div>
+</div>
