@@ -15,12 +15,67 @@ export default {
             type: Number,
             default: 100
         },
-        tip: Boolean
+        hoverTip: Boolean,
+        tipText: String
     },
     data() {
         return {
-            prefix
+            prefix,
+            customTip: false,
+            showTip: true
         }
+    },
+    methods: {
+        init() {
+            this.customTip = this.$slots.tip;
+        },
+        getDom() {
+            let barDom = this.$refs.bar;
+            let tipDom = this.$refs.tip;
+            let occupyBarDom = this.$refs.occupyBar;
+            let ctrlDom = occupyBarDom.querySelector(`.${this.prefix}-bar-ctrl`);
+            return {barDom, tipDom, occupyBarDom, ctrlDom};
+        },
+        ctrlMousemove(event) {
+            let {barDom, tipDom, occupyBarDom, ctrlDom} = this.getDom();
+
+            let occupyBarWidth = event.x - barDom.offsetLeft;
+            let barWidth = this.$refs.bar.offsetWidth;
+            let offset = ctrlDom.offsetWidth / 2;
+            let occupyBarWidthRate = occupyBarWidth / barWidth;
+
+            if(occupyBarWidthRate < 1 && occupyBarWidthRate > 0) {
+                occupyBarDom.style.width = `calc(${occupyBarWidthRate * 100}% + ${offset}px)`;
+            }
+        },
+        ctrlMousedown() {
+            document.addEventListener('mousemove', this.ctrlMousemove);
+            document.addEventListener('mouseup', this.ctrlMouseup);
+        },
+        ctrlMouseup() {
+            document.removeEventListener('mousemove', this.ctrlMousemove, false);
+            document.removeEventListener('mouseup', this.ctrlMouseup, false);
+        },
+        handleClick() {
+            this.ctrlMousemove(event);
+        },
+        handleMouseenter() {
+            let {barDom, tipDom, occupyBarDom, ctrlDom} = this.getDom();
+            let offset = ctrlDom.offsetWidth / 2;
+            let position = event.x - barDom.offsetLeft;
+
+            if(tipDom) {
+                tipDom.style.left = (position - offset) + 'px';
+            }
+
+            this.showTip = true;
+        },
+        handleMouseleave() {
+            this.showTip = false;
+        }
+    },
+    mounted() {
+        this.init();
     },
     computed: {
         classes() {
@@ -30,18 +85,5 @@ export default {
             ];
         }
     },
-    methods: {
-        ctrlMousemove(event) {
-            console.log(event);
-            
-        },
-        ctrlMousedown() {
-            window.addEventListener('mousemove', this.ctrlMousemove);
-        },
-        ctrlMouseup() {
-            console.log('弹起s');
-            window.removeEventListener('mousemove', this.ctrlMousemove);
-        }
-    }
 }
 </script>

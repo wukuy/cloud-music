@@ -3,6 +3,7 @@
 $prefix = c-slider;
 
 .{$prefix}-wrap{
+    user-select:none;
     display: flex;
     align-items: center;
     .{$prefix}{
@@ -10,12 +11,15 @@ $prefix = c-slider;
         background: #c6c6c6;
         border-radius: 4px;
         height: 4px;
+        cursor: pointer;
+        position: relative;
         &-bar{
             border-radius: 4px;
             background: $primary-color;
-            width: 80px;
-            position: relative;
+            width: 40%;
             height: 4px;
+            // transition: all .3s;
+            position: relative;
             &-ctrl{
                 position: absolute;
                 right: 0;
