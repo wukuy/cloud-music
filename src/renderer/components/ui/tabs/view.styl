@@ -4,11 +4,11 @@ $prefix = c-tabs;
 
 .{$prefix}{
     position: relative;
+    display: inline-block;
+    margin-bottom: -4px;
     &&-line{
-        $clear();
         height: 42px;
         line-height: 42px;
-        $border(bottom, $primary-color);
         color: #333;
         .{$prefix}-item{
             float: left;
@@ -34,7 +34,6 @@ $prefix = c-tabs;
     }
     &&-card{
         $clear();
-        $border(bottom, $primary-color);
         color: #333;
         font-size: 12px;
         .{$prefix}-item{

@@ -24,8 +24,8 @@ module.exports = env => {
         },
         plugins: [
             new CopyWebpackPlugin([
-                {from: './server', to: './server'}
+                { from: './server', to: './server' }
             ])
-        ]
+        ],
     }
 }

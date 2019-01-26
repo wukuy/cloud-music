@@ -5,7 +5,24 @@ const { exec, spawn } = require('child_process');
 // be closed automatically when the JavaScript object is garbage collected.
 let win
 
-let apiServer
+let apiServer;
+
+// 打开api服务
+function openServer() {
+	// 启动api server
+	apiServer = spawn('node', ['dist/server/app.js'], {cwd: undefined, env: Object.assign({PORT: 8212}, process.env)});
+	apiServer.stdout.on('data', (data) => {
+		process.stdout.write(`stdout: ${data}`);
+	});
+
+	apiServer.stderr.on('data', (data) => {
+		process.stdout.write(`stderr: ${data}`);
+	});
+
+	apiServer.on('close', (code) => {
+		console.log(`子进程退出码：${code}`);
+	});
+}
 
 function createWindow() {
 	// 创建浏览器窗口。
@@ -24,27 +41,15 @@ function createWindow() {
 	// 打开开发者工具
 	isDev && win.webContents.openDevTools();
 
-	// 启动api server
-	apiServer = spawn('cross-env', ['PORT=8212', 'node', 'dist/server/app.js']);
-	apiServer.stdout.on('data', (data) => {
-		console.log(`stdout: ${data}`);
-	});
-
-	apiServer.stderr.on('data', (data) => {
-		console.log(`stderr: ${data}`);
-	});
-
-	apiServer.on('close', (code) => {
-		console.log(`子进程退出码：${code}`);
-	});
-
 	// 当 window 被关闭，这个事件会被触发。
 	win.on('closed', () => {
 		// 取消引用 window 对象，如果你的应用支持多窗口的话，
 		// 通常会把多个 window 对象存放在一个数组里面，
 		// 与此同时，你应该删除相应的元素。
 		win = null
-	})
+	});
+
+	openServer();
 }
 
 // Electron 会在初始化后并准备
@@ -70,6 +75,3 @@ app.on('activate', () => {
 		createWindow()
 	}
 })
-
-// 在这个文件中，你可以续写应用剩下主进程代码。
-// 也可以拆分成几个文件，然后用 require 导入。

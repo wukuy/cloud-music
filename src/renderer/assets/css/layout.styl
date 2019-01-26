@@ -1,6 +1,7 @@
 html,body{
     height: 100%;
     font-size: 14px;
+    user-select: none;
 }
 
 ul{
@@ -15,4 +16,17 @@ dl,dd, p{
 
 h1,h2,h3,h4,h5,h6{
     margin: 0;
+}
+
+/*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar{
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+}
+
+/*定义滑块，内阴影及圆角*/
+::-webkit-scrollbar-thumb{
+    border-radius: 2px;
+    background-color: #d8d8d8;
 }

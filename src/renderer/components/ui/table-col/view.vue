@@ -11,6 +11,10 @@ export default {
         width: {
             type: String,
             default: '20%'
+        },
+        align: {
+            type: String,
+            default: 'left'
         }
     },
     computed: {

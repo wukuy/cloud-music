@@ -2,6 +2,7 @@ const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = env => {
     return {
@@ -10,7 +11,7 @@ module.exports = env => {
         entry: {
             main: ['@babel/polyfill', './src/renderer/main.js', 'webpack-hot-middleware/client?noInfo=true&reload=true']
         },
-        // target: env == 'development' ? 'web' : 'electron-renderer',
+        target: env == 'development' ? 'web' : 'electron-renderer',
         output: {
             filename: '[name].js',
             path: path.resolve(__dirname, '../dist'),
@@ -49,7 +50,7 @@ module.exports = env => {
                     ]
                 },
                 {
-                    test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
+                    test: /\.(gif|jpg|jpeg|png|woff|svg|eot|ttf)\??.*$/,
                     use: [
                         {
                             loader: 'url-loader',
@@ -57,8 +58,8 @@ module.exports = env => {
                                 limit: 8192,
                                 name(file) {
                                     let dirName = 'assets/font/';
-                                    if(/\.(gif|jpg|png)$/.test(file)) dirName = 'assets/images/';
-    
+                                    if (/\.(gif|jpg|jpeg|png)$/.test(file)) dirName = 'assets/images/';
+
                                     return `${dirName}[name].[hash:6].[ext]`;
                                 }
                             }
@@ -75,7 +76,10 @@ module.exports = env => {
             }),
             new CleanWebpackPlugin('./dist/*', {
                 root: path.resolve(__dirname, '../')
-            })
+            }),
+            new CopyWebpackPlugin([
+                { from: 'src/renderer/assets/images', to: 'assets/images' },
+            ])
         ],
         resolve: {
             alias: {
@@ -83,7 +87,7 @@ module.exports = env => {
                 '@': path.resolve(__dirname, '../src'),
                 '@assets': path.resolve(__dirname, '../src/renderer/assets'),
                 '@models': path.resolve(__dirname, '../src/renderer/models'),
-                '@common':  path.resolve(__dirname, '../src/renderer/common'),
+                '@common': path.resolve(__dirname, '../src/renderer/common'),
                 '@components': path.resolve(__dirname, '../src/renderer/components'),
                 '@routes': path.resolve(__dirname, '../src/renderer/routes'),
                 '@view': path.resolve(__dirname, '../src/renderer/view'),

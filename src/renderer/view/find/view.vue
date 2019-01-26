@@ -7,35 +7,50 @@ export default {
         return {
             navList: [
                 {
-                    name: '个性推荐',
+                    text: '个性推荐',
                     path: '/find/recommend'
                 },
                 {
-                    name: '歌单',
+                    text: '歌单',
                     path: '/find/singer'
                 },
                 {
-                    name: '主播电台',
+                    text: '主播电台',
                     path: '/find/radio'
                 },
                 {
-                    name: '排行榜',
+                    text: '排行榜',
                     path: '/find/rank'
                 },
                 {
-                    name: '歌手',
+                    text: '歌手',
                     path: '/find/song-sheet'
                 },
                 {
-                    name: '最新音乐',
+                    text: '最新音乐',
                     path: '/find/new-music'
                 }
-            ]
+            ],
         }
     },
     methods: {
+        init() {
+            this.setTabSelected();
+        },
+        setTabSelected() {
+            let currentPath = this.$route.path;
+
+            this.navList.forEach(item => {
+                this.$set(item, '$active', item.path === currentPath);
+            });
+        },
+        tabsChange(item) {
+            this.$router.push(item.path);
+            this.setTabSelected();
+        },
     },
     mounted() {
+        this.init();
     }
 }
 </script>

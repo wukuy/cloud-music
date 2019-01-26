@@ -1,13 +1,69 @@
 <div class="p-recommend">
-    <div class="p-banner"></div>
+    <div class="p-banner">
+        <Carousel>
+            <Carousel-item v-for="(item, idx) in bannerList" :key="idx">
+                <CImage :src="item.imageUrl" />
+            </Carousel-item>
+        </Carousel>
+    </div>
 
     <Card title="推荐歌单">
         <div slot="titleRight">更多></div>
         <div class="p-list">
-            <div class="p-item" v-for="item in recommendList" @click="goPlaylistDetail(item.id)">
-                <img :src="item.picUrl" class="p-cover">
-                <p class="p-name">{{item.name}}</p>
-            </div>
+            <Grid :data="recommendList" verticalAxisPadding="40px">
+                <div class="p-item" slot-scope="{item}" @click="goPlaylistDetail(item.id)">
+                    <CImage :src="item.picUrl" class="p-cover"/>
+                    <p class="p-name">{{item.name}}</p>
+                </div>
+            </Grid>
+        </div>
+    </Card>
+
+    <Card title="独家放送">
+        <div slot="titleRight">更多></div>
+        <div class="p-list">
+            <Grid :data="privatecontentList" verticalAxisPadding="40px" :columnCount="3">
+                <div class="p-item" slot-scope="{item}" @click="goPlaylistDetail(item.id)">
+                    <CImage :src="item.picUrl" class="p-cover"/>
+                    <p class="p-name">{{item.name}}</p>
+                </div>
+            </Grid>
+        </div>
+    </Card>
+
+    <Card title="最新音乐">
+        <div slot="titleRight">更多></div>
+        <div class="p-list">
+            <Grid :data="recommendList" verticalAxisPadding="40px">
+                <div class="p-item" slot-scope="{item}" @click="goPlaylistDetail(item.id)">
+                    <CImage :src="item.picUrl" class="p-cover"/>
+                    <p class="p-name">{{item.name}}</p>
+                </div>
+            </Grid>
+        </div>
+    </Card>
+
+    <Card title="推荐mv">
+        <div slot="titleRight">更多></div>
+        <div class="p-list">
+            <Grid :data="recommendMvList" verticalAxisPadding="40px">
+                <div class="p-item" slot-scope="{item}" @click="goPlaylistDetail(item.id)">
+                    <CImage :src="item.picUrl" class="p-cover"/>
+                    <p class="p-name">{{item.name}}</p>
+                </div>
+            </Grid>
+        </div>
+    </Card>
+
+    <Card title="主播电台">
+        <div slot="titleRight">更多></div>
+        <div class="p-list">
+            <Grid :data="recommendList" verticalAxisPadding="40px">
+                <div class="p-item" slot-scope="{item}" @click="goPlaylistDetail(item.id)">
+                    <CImage :src="item.picUrl" class="p-cover"/>
+                    <p class="p-name">{{item.name}}</p>
+                </div>
+            </Grid>
         </div>
     </Card>
 </div>

@@ -48,7 +48,12 @@ export default {
     },
     data() {
         return {
-            data: [{
+            data: []
+        }
+    },
+    mounted() {
+        setTimeout(() => {
+            this.data = [{
                 name: '贼',
                 singer: '戴佩妮',
                 album: '贼',
@@ -133,7 +138,7 @@ export default {
                 duration: '04:20',
                 test: 'test2'
             },]
-        }
+        }, 3000);
     }
 }
 

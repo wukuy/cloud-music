@@ -14,7 +14,9 @@ export default {
     },
     data() {
         return {
-            tableOptions: []
+            tableOptions: [],
+            ths: [],
+            cols: []
         }
     },
     methods: {
@@ -23,7 +25,7 @@ export default {
             return this.$slots.default.map(item => {
                 let opt = {};
                 if(!item.componentOptions) return;
-
+                
                 let {tag, propsData} = item.componentOptions;
                 let {attrs = {}, scopedSlots = {} } = item.data || {};
                 if(tag === 'TableCol') {
@@ -33,25 +35,32 @@ export default {
         },
         // 创建表头
         thCreate() {
-            let th = this.tableOptions.map(item => {
-                return <th  style={`text-align: ${item.align || 'center'}`}>{item.name}</th>
+            this.tableOptions.map(item => {
+                this.cols.push(<col style={`width: ${item.width}`} />);
+                this.ths.push(<th  style={`text-align: ${item.align || 'left'}`}>{item.name}</th>);
             });
-
-            return <tr class={`${this.classes}-th-wrap`}>{th}</tr>
         },
         // 创建表内容
         tdCreate() {
-            let td = (itemData) => this.tableOptions.map(item => {
+            let td = (itemData, idx) => this.tableOptions.map((item) => {
                 let tdNode = item.$defaultScopedSlots ? 
-                            item.$defaultScopedSlots({item: itemData, fieldData: itemData[item.field]}) : 
+                            item.$defaultScopedSlots({
+                                idx: idx,
+                                index: idx,
+                                item: itemData,
+                                fieldData: itemData[item.field]
+                            }) :
                             itemData[item.field];
 
-                return <td style={`text-align: ${item.align || 'center'}`}>{tdNode}</td>
+                return <td style={`text-align: ${item.align || 'left'}`}>{tdNode}</td>
             });
 
-            return this.data.map(item => {
-                return <tr class={`${this.classes}-td-wrap`}>{td(item)}</tr>
+            return this.data.map((item, idx) => {
+                return <tr class={`${this.classes}-td-wrap`} onClick={() => this.rowClick(item)}>{td(item, idx)}</tr>
             });
+        },
+        rowClick(item) {
+            this.$emit('click', item);
         }
     },
     computed: {
@@ -64,11 +73,15 @@ export default {
     components: {
         TableCol
     },
+    mounted() {
+        this.thCreate();
+    },
     render(h) {
         this.tableOptions = this.getTableOptions();
 
         return (<table class={this.classes}>
-            {this.thCreate()}
+            {this.cols}
+            <tr class={`${this.classes}-th-wrap`}>{this.ths}</tr>
             {this.tdCreate()}
         </table>);
     }

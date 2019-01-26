@@ -47,20 +47,20 @@ function startRendere() {
         let devMiddleware = webpackDevMiddleware(complier, {
             logLevel: 'silent'
         })
-        
+
         let hotMiddleware = webpackHotMiddleware(complier, {
-           log: false,
-           heartbeat: 2000,
+            log: false,
+            heartbeat: 2000,
         })
 
         complier.hooks.afterEmit.tap('after-emit', () => {
             resolve();
         });
-        
+
         app.use(devMiddleware);
         app.use(hotMiddleware);
 
-        app.listen(port, 'localhost', () => {});
+        app.listen(port, 'localhost', () => { });
 
     });
 }

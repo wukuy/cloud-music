@@ -27,3 +27,12 @@ $textOverflow(line=1) {
         overflow: hidden;
     }
 }
+
+// 边框
+$border($dir=all, $color=$border-color, $width=1px){
+    if($dir=='all') {
+        border: $width solid $color;
+    }else {
+        border-{$dir}: $width solid $color;
+    }
+}

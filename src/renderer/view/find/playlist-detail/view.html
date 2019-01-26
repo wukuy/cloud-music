@@ -1,17 +1,83 @@
 <div class="p-playlist-detail">
-    <div class="p-tabs">
-        <ul>
-            <li>
-                歌曲列表
-            </li>
-        </ul>
+    <div class="p-cover-wrap">
+        <div class="p-cover-pic">
+            <CImage :src="info.coverImgUrl" />
+        </div>
+        <div class="p-describe-wrap">
+            <h3 class="p-title">
+                {{info.name}}
+                {{playlist.length}}
+                {{info.playCount}}
+            </h3>
+            <div class="p-create-date">
+                <span>{{info.creator && info.creator.nickname}}</span>
+                <span>2018-11-01</span>
+            </div>
+            <div class="p-operation">
+                <ButtonGroup>
+                    <Button size="small">播放全部</Button>
+                    <Button size="small">+</Button>
+                </ButtonGroup>
+
+                <Button size="small">
+                    <Icon name="th-list"></Icon>
+                    收藏(1811111)
+                </Button>
+
+                <Button size="small">
+                    <Icon name="th-list"></Icon>
+                    分享(9545)
+                </Button>
+
+                <Button size="small">
+                    <Icon name="th-list"></Icon>
+                    全部下载
+                </Button>
+            </div>
+            <div class="p-tags">
+                标签: {{info.tags && info.tags.join('/')}}
+            </div>
+            <div class="p-note">
+                简介: {{info.description}}
+            </div>
+        </div>
     </div>
+
     <div class="p-table">
-        <ul>
-            <li v-for="item in playlist" @click="playMusic(item)">
-                {{item.id}}
-                {{item.name}}
-            </li>
-        </ul>
+        <div class="p-tabs">
+            <Tabs :data="tabs" type="card" class="p-tabs-card"></Tabs>
+        </div>
+        <Table :data="playlist" @click="tabRowClick">
+            <TableCol width="30px">
+                <template slot-scope="{idx}">
+                    {{(idx + 1) < 10 ? '0' + (idx + 1) : (idx + 1)}}
+                </template>
+            </TableCol>
+            <TableCol name="操作" width="60px">
+                <template slot-scope="{fieldData}">
+                    <Icon name="download" />
+                    <Icon name="heart" />
+                    <Icon name="heart-o" />
+                </template>
+            </TableCol>
+            <TableCol name="音乐名称" field="name" width="200px">
+                <template slot-scope="{fieldData}">
+                    <div class="p-music-name">{{fieldData}}</div>
+                </template>
+            </TableCol>
+            <TableCol name="歌手" field="singer" width="80px">
+                <div slot-scope="{fieldData}" class="p-singer">{{fieldData}}</div>
+            </TableCol>
+            <TableCol name="专辑" field="album" width="200px">
+                <template slot-scope="{fieldData}">
+                    <div class="p-album">{{fieldData}}</div>
+                </template>
+            </TableCol>
+            <TableCol name="时长" field="duration" width="60px">
+                <template slot-scope="{fieldData}">
+                    {{fieldData}}
+                </template>
+            </TableCol>
+        </Table>
     </div>
 </div>

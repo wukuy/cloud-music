@@ -1,0 +1,14 @@
+<div :class="classes" ref="carousel">
+    <div :class="`${prefix}-wrap`" ref="carouselWrap">
+        <slot></slot>
+    </div>
+    <div :class="`${prefix}-dot-wrap`">
+        <ul>
+            <li 
+                v-for="(dot, idx) in items"
+                @click="sliderChange(idx)"
+                :class="[`${prefix}-dot`, {[`${prefix}-dot-actived`]: idx === currentIdx}]">
+            </li>
+        </ul>
+    </div>
+</div>

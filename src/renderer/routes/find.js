@@ -9,6 +9,7 @@ import NewMusic from '@view/find/new-music/view.vue';
 export default {
     component: Find,
     path: '/find',
+    redirect: '/find/recommend',
     children: [
         {
             component: Recommend,

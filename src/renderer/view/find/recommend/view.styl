@@ -1,21 +1,27 @@
 @import '~@assets/css/define.styl';
 
 .p-recommend{
-    .p-list{
-        padding: 10px;
-        .p-item{
-            width: calc(20% - 10px);
-            min-height: calc(20% - 10px);
-            overflow: hidden;
-            margin: 0 5px;
-            float: left;
-            cursor: pointer;
-            .p-cover{
-                width: 100%;
+    padding: 0 30px;
+    .p-banner{
+        margin: 20px 0;
+        .c-carousel-item{
+            background: #f1f1f1;
+            height: 100%;
+            img{
+                max-height: 400px;
+                min-height: 200px;
             }
+        }
+    }
+    .p-list{
+        padding: 10px 0;
+        .p-item{
+            cursor: pointer;
             .p-name{
+                width: 100%;
                 height: 32px;
-                $textOverflow(2);
+                line-height: 20px;
+                color: #333;
             }
         }
     }
