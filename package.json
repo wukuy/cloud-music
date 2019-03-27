@@ -11,9 +11,10 @@
   "scripts": {
     "dev": "webpack --config ./build/webpack.dev.js",
     "start": "node ./build/webpack.dev.js",
-    "build": "node ./build/webpack.prod.js && electron-builder ",
-    "build:deb": "node ./build/webpack.prod.js  && electron-builder --linux deb",
-    "build:web": "node ./build/webpack.prod.js"
+    "build": "node ./build/webpack.build.js && electron-builder ",
+    "build:deb": "node ./build/webpack.build.js  && electron-builder --linux deb",
+    "build:win": "node ./build/webpack.build.js  && electron-builder --win --ia32",
+    "build:web": "NODE_ENV=development node ./build/webpack.build.js"
   },
   "build": {
     "directories": {
@@ -27,20 +28,27 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.2.0",
+    "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.2.0",
+    "apicache": "^1.2.3",
     "babel-loader": "^8.0.4",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
+    "babel-polyfill": "^6.26.0",
     "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.6.0",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
     "electron": "^3.0.8",
     "electron-builder": "^20.36.2",
+    "express": "^4.16.4",
     "file-loader": "^2.0.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
+    "pac-proxy-agent": "^3.0.0",
     "progress-bar-webpack-plugin": "^1.11.0",
+    "request": "^2.88.0",
     "style-loader": "^0.23.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
@@ -54,16 +62,10 @@
     "webpack-hot-middleware": "^2.24.3"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0",
-    "apicache": "^1.2.3",
     "axios": "^0.18.0",
-    "babel-polyfill": "^6.26.0",
-    "express": "^4.16.4",
-    "request": "^2.88.0",
     "vue": "^2.5.17",
     "vue-lazyload": "^1.2.6",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1",
-    "cross-env": "^5.2.0"
+    "vuex": "^3.0.1"
   }
 }

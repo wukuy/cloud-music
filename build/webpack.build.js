@@ -3,9 +3,11 @@ const RendererConfig = require('./webpack.renderer');
 const webpack = require('webpack');
 const { getApiServer } = require('./utils.js');
 
+const NODE_ENV = process.env.NODE_ENV || 'production';
+
 function startMain() {
     return new Promise((resolve, reject) => {
-        const complier = webpack(MainConfig('production'));
+        const complier = webpack(MainConfig(NODE_ENV));
 
         complier.hooks.afterEmit.tap('after-emit', () => {
             resolve();
@@ -20,7 +22,7 @@ function startMain() {
 
 function startRenderer() {
     return new Promise((resolve, reject) => {
-        const complier = webpack(RendererConfig('production'));
+        const complier = webpack(RendererConfig(NODE_ENV));
 
         complier.hooks.afterEmit.tap('after-emit', () => {
             resolve();

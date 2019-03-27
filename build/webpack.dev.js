@@ -69,12 +69,13 @@ function startRendere() {
 function startElectron() {
     electronProcess = spawn(electron, ['--inspect=5860', path.resolve(__dirname, '../dist/index.js')])
     electronProcess.stdout.on('data', (data) => {
-        // console.log(`stdout: ${data}`);
+        process.stdout.write(`stdout: ${data}`);
     });
     electronProcess.stderr.on('data', (data) => {
-        // console.log(`stderr: ${data}`);
+        process.stdout.write(`stderr: ${data}`);
     });
     electronProcess.on('close', () => {
+        console.log((`应用退出 -- 开发模式`));
         if (!isMainRefresh) process.exit()
     })
 }
@@ -89,6 +90,7 @@ function startMain() {
 
         compiler.watch({}, (err, stats) => {
             console.log(stats.toString('errors-only'));
+            // ''
 
             if (electronProcess) {
                 isMainRefresh = true;

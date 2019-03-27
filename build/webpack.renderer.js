@@ -6,7 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = env => {
     return {
-        mode: env,
+        mode: 'production',
         devtool: 'none',
         entry: {
             main: ['@babel/polyfill', './src/renderer/main.js', 'webpack-hot-middleware/client?noInfo=true&reload=true']
