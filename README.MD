@@ -3,6 +3,7 @@
 
 ### run
 ```bash
+# 先安装npm包 `yarn`, 再运行。
 yarn run start
 ```
 ### build package
