@@ -6,13 +6,13 @@ const Utils = {
     getApiServer() {
         return new Promise((resolve, reject) => {
             // check exist
-            const exist = fs.existsSync(path.resolve(__dirname, '../server/app.js'));
+            const exist = fs.existsSync(path.resolve(__dirname, '../src/server/app.js'));
             if(exist) {
                 resolve(true);
                 return;
             }
 
-            const gitPrecess = spawn('git', ['clone', 'https://github.com/Binaryify/NeteaseCloudMusicApi.git', 'server']);
+            const gitPrecess = spawn('git', ['clone', 'https://github.com/Binaryify/NeteaseCloudMusicApi.git', 'src/server']);
             gitPrecess.stdout.on('data', (data) => {
                 console.log(`${data}`);
             });
