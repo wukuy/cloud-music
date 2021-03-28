@@ -50,5 +50,14 @@ module.exports = {
         url: '/dj/catelist',
         data
     }),
-    
+    // 电台 - 分类推荐
+    getDJRecommend: (data) => Http({
+        url: '/dj/recommend/type',
+        data
+    }),
+    // 全部电台
+    getRadioHot: (data) => Http({
+        url: '/dj/radio/hot',
+        data
+    }),
 }

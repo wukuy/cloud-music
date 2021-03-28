@@ -1,10 +1,34 @@
 <div class="p-radio-page">
     <div class="p-cate-list">
         <ul>
-            <li v-for="(item, idx) in catelist" :key="idx">
-                <div class="p-icon" :style="{ 'background-image': `url(item.picMacUrl)`}"></div>
-                <p>{{ item.name }}</p>
+            <li v-for="(item, idx) in catelist" :key="idx" @click="cateChange(item)" :class="{ 'p-cate-selected': currentCateId === item.id }">
+                <div class="p-icon" :style="{ 'background-image': `url(${item.picMacUrl})`}"></div>
+                <p >{{ item.name }}</p>
             </li>
         </ul>
     </div>
+
+    <Card title="优秀新电台">
+        <div class="p-list">
+            <Grid :data="DJRecommendList" verticalAxisPadding="40px" :columnCount="5">
+                <div class="p-item" slot-scope="{ item }" @click="goPlaylistDetail(item.id)">
+                    <CImage :src="item.picUrl" class="p-cover"/>
+                    <p class="p-name">{{item.name}}</p>
+                    <p class="p-desc">{{item.rcmdtext}}</p>
+                </div>
+            </Grid>
+        </div>
+    </Card>
+
+    <Card title="全部电台">
+        <div class="p-list">
+            <Grid :data="radioHotList" verticalAxisPadding="40px" :columnCount="5">
+                <div class="p-item" slot-scope="{ item }" @click="goPlaylistDetail(item.id)">
+                    <CImage :src="item.picUrl" class="p-cover"/>
+                    <p class="p-name">{{item.name}}</p>
+                    <p class="p-desc">{{item.rcmdtext}}</p>
+                </div>
+            </Grid>
+        </div>
+    </Card>
 </div>
