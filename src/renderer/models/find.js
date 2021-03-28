@@ -60,4 +60,11 @@ module.exports = {
         url: '/dj/radio/hot',
         data
     }),
+    // 所有榜单
+    getTopList: (data) => Http({
+        url: '/toplist',
+        data
+    }),
+
+    
 }

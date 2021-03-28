@@ -1,3 +1,15 @@
-<div class="p-rank">
-    排行
+<div class="p-rank-page">
+    <Card title="官方榜">
+        <div class="p-list">
+            <Grid :data="topList" verticalAxisPadding="40px" :columnCount="3">
+                <div class="p-item" slot-scope="{ item }">
+                    <div class="p-cover-wrap">
+                        <div class="p-cover" :style="{ 'background-image': `url(${item.coverImgUrl})` }"></div>
+                    </div>
+                    <p class="p-name">{{item.name}}</p>
+                    <p class="p-desc">{{item.rcmdtext}}</p>
+                </div>
+            </Grid>
+        </div>
+    </Card>
 </div>
