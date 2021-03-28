@@ -51,6 +51,7 @@ export default {
         },
         async getPrivatecontent() {
             let data = await getPrivatecontent();
+
             if(data) {
                 this.privatecontentList = data.result.slice(0, 10);
             }
@@ -61,8 +62,6 @@ export default {
                 this.recommendMvList = data.result.slice(0, 10);
             }
         },
-
-        
     },
     created() {
         this.init();

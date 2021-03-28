@@ -45,7 +45,7 @@ function createWindow() {
 		isDev && apiServer.kill();
 		win = null;
 	});
-	openServer();
+	// openServer();
 }
 
 // Electron 会在初始化后并准备

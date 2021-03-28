@@ -12,6 +12,10 @@ Vue.use(VueRouter);
 let router = new VueRouter({
     routes: [
         {
+            path: '/',
+            redirect: '/find',
+        },
+        {
             path: '/example',
             component: Example
         },

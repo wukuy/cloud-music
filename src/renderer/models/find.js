@@ -30,4 +30,25 @@ module.exports = {
         url: '/personalized/mv',
         data
     }),
+    // 获取歌单
+    getSongSheet: (data) => Http({
+        url: '/top/playlist',
+        data
+    }),
+    // 热门歌单分类
+    gethotSheetClass: (data) => Http({
+        url: '/playlist/hot',
+        data
+    }),
+    // 歌单分类
+    getSongSheetClass: (data) => Http({
+        url: '/playlist/catlist',
+        data
+    }),
+    // 电台 - 分类
+    getDJCatelist: (data) => Http({
+        url: '/dj/catelist',
+        data
+    }),
+    
 }

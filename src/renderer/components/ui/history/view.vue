@@ -9,7 +9,10 @@ export default {
     },
     methods: {
         back() {
-            console.log(this.$router);
+            window.history.back(-1)
+        },
+        forward() {
+            window.history.forward(1)
         }
     },
     computed: {

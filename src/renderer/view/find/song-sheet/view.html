@@ -1,3 +1,41 @@
 <div class="p-song-sheet">
-    歌单
+    <el-popover
+        placement="bottom-start"
+        v-model="showPopover"
+        width="600"
+        popper-class="p-song-sheet-class-popover"
+        trigger="click">
+        <Button slot="reference">
+            {{ currentClass || '全部歌单' }}
+            <i class="el-icon-arrow-down"></i>
+        </Button>
+        <div class="p-class-wrap">
+            <div class="p-title">选择标签</div>
+            <div class="p-content">
+                <Button class="p-all-song-sheet-btn" @click="classesChange">{{ songSheetClass.all.name }}</Button>
+                <div class="p-classes" v-for="(name, id) in songSheetClass.categories">
+                    <div class="p-classes-name">{{ name }}</div>
+                    <el-radio-group class="p-classes-val" v-model="currentClass" size="small" @change="classesChange">
+                        <el-radio-button :label="item.name" v-for="(item, idx) in songSheetClass.sub" v-if="+id === item.category"></el-radio-button>
+                    </el-radio-group>
+                </div>
+            </div>
+        </div>
+    </el-popover>
+  
+    <div class="p-hot-sheet-class">
+        <div class="p-label">热门标签: </div>
+        <ul>
+            <li v-for="(item, idx) in hotSheetClass" @click="classesChange(item.name)">{{ item.name }}</li>
+        </ul>
+    </div>
+
+    <div class="p-song-sheet-list">
+        <Grid :data="songSheets" verticalAxisPadding="40px">
+            <div class="p-item" slot-scope="{ item }" @click="goPlaylistDetail(item.id)">
+                <CImage :src="item.coverImgUrl" class="p-cover"/>
+                <p class="p-name">{{item.name}}</p>
+            </div>
+        </Grid>
+    </div>
 </div>

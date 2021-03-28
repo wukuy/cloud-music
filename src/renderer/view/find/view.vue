@@ -12,7 +12,7 @@ export default {
                 },
                 {
                     text: '歌单',
-                    path: '/find/singer'
+                    path: '/find/song-sheet'
                 },
                 {
                     text: '主播电台',
@@ -24,7 +24,7 @@ export default {
                 },
                 {
                     text: '歌手',
-                    path: '/find/song-sheet'
+                    path: '/find/singer'
                 },
                 {
                     text: '最新音乐',
