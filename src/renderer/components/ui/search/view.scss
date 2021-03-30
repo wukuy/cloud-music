@@ -1,15 +1,15 @@
 @import '../../styles/define.scss';
 
-$prefix = c-search;
+$prefix: c-search;
 
-.{$prefix}{
+.#{$prefix}{
     max-width: 220px;
     display: inline-block;
     .c-input{
         height: 24px;
         border: none;
         background: rgba(0,0,0,.2);
-        border-radius: (@height / 2);
+        border-radius: (height / 2);
         input{
             background: rgba(0,0,0,0);
         }

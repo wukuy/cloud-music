@@ -1,16 +1,16 @@
 @import '../../styles/define.scss';
 
-$prefix = c-tabs;
+$prefix: c-tabs;
 
-.{$prefix}{
+.#{$prefix}{
     position: relative;
     display: inline-block;
     margin-bottom: -4px;
-    &&-line{
+    &-line{
         height: 42px;
         line-height: 42px;
         color: #333;
-        .{$prefix}-item{
+        .#{$prefix}-item{
             float: left;
             cursor: pointer;
             padding: 0 20px;
@@ -25,24 +25,24 @@ $prefix = c-tabs;
                 content: "";
                 display: block;
                 position: absolute;
-                $border(bottom, $primary-color, 2px);
+                @include border(bottom, $primary-color, 2px);
                 bottom: 0;
                 width: 100%;
                 left: 0;
             }
         }
     }
-    &&-card{
-        $clear();
+    &-card{
+        @include clear();
         color: #333;
         font-size: 12px;
-        .{$prefix}-item{
+        .#{$prefix}-item{
             float: left;
             cursor: pointer;
             padding: 0 10px;
             position: relative;
             margin: 0 4px;
-            $border();
+            @include border();
             border-bottom: none;
             height: 30px;
             line-height: 30px;
@@ -51,7 +51,7 @@ $prefix = c-tabs;
             }
             &-active{
                 color: $primary-color;
-                $border(, $primary-color);
+                @include border('', $primary-color);
                 border-bottom: none;
                 background: $primary-color !important;
                 color: #fff;

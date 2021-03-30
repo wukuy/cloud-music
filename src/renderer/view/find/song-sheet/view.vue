@@ -1,51 +1,54 @@
 <template src="./view.html"></template>
-<style src="./view.styl" lang="stylus" scoped></style>
+<style src="./view.scss" lang="scss" scoped></style>
 
 <script>
-import { getSongSheet, getSongSheetClass, gethotSheetClass } from '@models/find.js'
+import {
+    getSongSheet,
+    getSongSheetClass,
+    gethotSheetClass,
+} from "@models/find.js";
 
 export default {
-  data () {
-    return {
-      songSheetClass: {
-        categories: {},
-        sub: [],
-        all: {}
-      },
-      currentClass: '',
-      songSheets: [],
-      showPopover: false,
-      hotSheetClass: []
-    }
-  },
-  methods: {
-    async getSongSheetClass () {
-      this.songSheetClass = await getSongSheetClass()
-      console.log(this.songSheetClass)
+    data() {
+        return {
+            songSheetClass: {
+                categories: {},
+                sub: [],
+                all: {},
+            },
+            currentClass: "",
+            songSheets: [],
+            showPopover: false,
+            hotSheetClass: [],
+        };
     },
-    async gethotSheetClass () {
-      let data = await gethotSheetClass()
+    methods: {
+        async getSongSheetClass() {
+            this.songSheetClass = await getSongSheetClass();
+        },
+        async gethotSheetClass() {
+            let data = await gethotSheetClass();
 
-      this.hotSheetClass = data.tags
+            this.hotSheetClass = data.tags;
+        },
+        async getSongSheet() {
+            let data = await getSongSheet({ cat: this.currentClass });
+            this.songSheets = data.playlists;
+        },
+        classesChange(val = "") {
+            this.showPopover = false;
+            this.currentClass = val;
+            this.getSongSheet();
+        },
+        goPlaylistDetail(id) {
+            this.$router.push({ path: "/playlist_detail", query: { id } });
+        },
     },
-    async getSongSheet () {
-      let data = await getSongSheet({ cat: this.currentClass })
-      this.songSheets = data.playlists
+    created() {
+        this.getSongSheetClass();
+        this.getSongSheet();
+        this.gethotSheetClass();
     },
-    classesChange (val = '') {
-      this.showPopover = false
-      this.currentClass = val
-      this.getSongSheet()
-    },
-    goPlaylistDetail (id) {
-      this.$router.push({path: '/playlist_detail', query: {id}})
-    }
-  },
-  created () {
-    this.getSongSheetClass()
-    this.getSongSheet()
-    this.gethotSheetClass()
-  }
-}
+};
 </script>
 

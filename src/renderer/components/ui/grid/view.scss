@@ -1,8 +1,8 @@
 @import '../../styles/define.scss';
 
-$prefix = c-grid;
+$prefix: c-grid;
 
-.{$prefix}{
+.#{$prefix}{
     &-row{
         display: flex;
     }

@@ -75,7 +75,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="scss" scoped>
 .p-example{
     padding: 10px;
     >ul{
@@ -85,7 +85,7 @@ export default {
             display: inline-block;
             padding: 0 20px;
             height: 28px;
-            line-height: @height;
+            line-height: height;
             border-left: 1px solid #bfbfbf;
             h2{
                 margin: 0;

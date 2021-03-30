@@ -1,8 +1,8 @@
 @import '../../styles/define.scss';
 
-$prefix = c-carousel;
+$prefix: c-carousel;
 
-.{$prefix}{
+.#{$prefix}{
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -14,7 +14,7 @@ $prefix = c-carousel;
         height: 100%;
     }
     &-dot-wrap{
-        $clear();
+        @include clear();
         position: absolute;
         bottom: 20px;
         left: 50%;
@@ -29,7 +29,7 @@ $prefix = c-carousel;
         margin: 0 4px;
         cursor: pointer;
         padding: 4px 0;
-        &&-actived::after{
+        &-actived::after{
             background: $primary-color;
         }
         &::after{

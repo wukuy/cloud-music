@@ -1,9 +1,9 @@
 @import '../../styles/define.scss';
 
-$prefix = c-button-group;
+$prefix: c-button-group;
 
-.{$prefix}{
-    $clear();
+.#{$prefix}{
+    @include clear();
     border-radius: $border-radius;
     overflow: hidden;
     display: inline-block;

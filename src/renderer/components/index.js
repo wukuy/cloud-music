@@ -1,4 +1,4 @@
-import './styles/index.styl'
+import './styles/index.scss'
 import VueLazyload from 'vue-lazyload'
 import defaultCover from './images/default_cover_2.jpeg'
 import picLoading from './images/pic_loading.gif'
@@ -37,7 +37,6 @@ const components = {
   TableCol,
   Tabs,
   Slider,
-  install,
   Grid,
   Carousel,
   CarouselItem,
@@ -63,4 +62,25 @@ function install (Vue) {
   })
 }
 
-module.exports.default = module.exports = components
+export default install
+
+export {
+    Button,
+    ButtonGroup,
+    Icon,
+    Input,
+    Search,
+    Card,
+    History,
+    Menu,
+    MenuGroup,
+    MenuItem,
+    Table,
+    TableCol,
+    Tabs,
+    Slider,
+    Grid,
+    Carousel,
+    CarouselItem,
+    CImage
+}

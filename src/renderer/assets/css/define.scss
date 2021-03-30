@@ -1,54 +1,54 @@
-$primary-color = #c72e2e;
-$body-color = #fff;
+$primary-color: #c72e2e;
+$body-color: #fff;
 
-$border-color = #DCDFE6;
+$border-color: #DCDFE6;
 // 主色
-$color-primary = #33B3FF;
+$color-primary: #33B3FF;
 
 /* Background Color */
 // 基础白色
-$color-white = #FFFFFF;
+$color-white: #FFFFFF;
 // 基础黑色
-$color-black = #000;
+$color-black: #000;
 // 基础背景色
-$background-color-base = #F5F7FA;
+$background-color-base: #F5F7FA;
 
 /* Functional Color */
 // 成功色
-$color-success = #27AE60;
+$color-success: #27AE60;
 // 警告色
-$color-warning = #FF9200;
+$color-warning: #FF9200;
 // 危险颜色
-$color-danger = #FF0000;
+$color-danger: #FF0000;
 // 信息颜色
-$color-info = #979797;
+$color-info: #979797;
 
 /* Font Color */
 // 主要文字颜色
-$color-text-primary = #333;
+$color-text-primary: #333;
 // 常规文字颜色
-$color-text-regular = #666;
+$color-text-regular: #666;
 // 次要文字颜色
-$color-text-secondary = #999;
+$color-text-secondary: #999;
 // 占位文字颜色
-$color-text-placeholder = #C0C4CC;
+$color-text-placeholder: #C0C4CC;
 
 /* Border Color */
 // 一级边框颜色
-$border-color-base = #DCDFE6;
+$border-color-base: #DCDFE6;
 // 二级边框颜色
-$border-color-light = #E4E7ED;
+$border-color-light: #E4E7ED;
 // 三级边框颜色
-$border-color-lighter = #EBEEF5;
+$border-color-lighter: #EBEEF5;
 // 四级边框颜色
-$border-color-extra-light = #F2F6FC;
+$border-color-extra-light: #F2F6FC;
 
 // 滚动条
-$scrollbar-background-color = rgba($color-text-secondary, .3);
-$scrollbar-hover-background-color = rgba($color-text-secondary, .5);
+$scrollbar-background-color: rgba($color-text-secondary, .3);
+$scrollbar-hover-background-color: rgba($color-text-secondary, .5);
 
 // 清除浮动
-$clear() {
+@mixin clear() {
     &:after{
         content:"";
         display:block;
@@ -59,12 +59,12 @@ $clear() {
 }
 
 // 移除隐藏
-$textOverflow(line=1) {
-    if(line) {
+@mixin textOverflow($line: 1) {
+    @if($line) {
         overflow: hidden;
         text-overflow:ellipsis;
         white-space: nowrap;
-    }else{
+    }@else{
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: line;
@@ -73,10 +73,10 @@ $textOverflow(line=1) {
 }
 
 // 边框
-$border($dir=all, $color=$border-color, $width=1px){
-    if($dir=='all') {
+@mixin border($dir: all, $color: $border-color, $width: 1px){
+    @if($dir=='all') {
         border: $width solid $color;
-    }else {
-        border-{$dir}: $width solid $color;
+    }@else {
+        border-#{$dir}: $width solid $color;
     }
 }

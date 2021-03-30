@@ -1,8 +1,8 @@
 @import '../../styles/define.scss';
 
-$prefix = c-image;
+$prefix: c-image;
 
-.{$prefix}{
+.#{$prefix}{
     filter: blur(4px);
     transition: all $transition-time;
     &[lazy=loaded] {

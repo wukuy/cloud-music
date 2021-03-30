@@ -1,68 +1,78 @@
 import Http from '@common/app.http.js'
 
-module.exports = {
-  // 获取banner
-  getBanner: () => Http({
+// 获取banner
+export const getBanner = () => Http({
     url: '/banner'
-  }),
-  // 推荐歌单
-  personalized: () => Http({
+})
+
+// 推荐歌单
+export const personalized = () => Http({
     url: '/personalized'
-  }),
-  // 获取
-  playlistDetail: (data) => Http({
+})
+
+// 获取
+export const playlistDetail = (data) => Http({
     url: '/playlist/detail',
     data
-  }),
-  // 获取音乐url
-  getMusicUrl: (data) => Http({
+})
+
+// 获取音乐url
+export const getMusicUrl = (data) => Http({
     url: '/song/url',
     data
-  }),
-  // 独家放送
-  getPrivatecontent: (data) => Http({
+})
+
+// 独家放送
+export const getPrivatecontent = (data) => Http({
     url: '/personalized/privatecontent',
     data
-  }),
-  // 推荐mv
-  personalizedMv: (data) => Http({
+})
+
+// 推荐mv
+export const personalizedMv = (data) => Http({
     url: '/personalized/mv',
     data
-  }),
-  // 获取歌单
-  getSongSheet: (data) => Http({
+})
+
+// 获取歌单
+export const getSongSheet = (data) => Http({
     url: '/top/playlist',
     data
-  }),
-  // 热门歌单分类
-  gethotSheetClass: (data) => Http({
+})
+
+// 热门歌单分类
+export const gethotSheetClass = (data) => Http({
     url: '/playlist/hot',
     data
-  }),
-  // 歌单分类
-  getSongSheetClass: (data) => Http({
+})
+
+// 歌单分类
+export const getSongSheetClass = (data) => Http({
     url: '/playlist/catlist',
     data
-  }),
-  // 电台 - 分类
-  getDJCatelist: (data) => Http({
+})
+
+// 电台 - 分类
+export const getDJCatelist = (data) => Http({
     url: '/dj/catelist',
     data
-  }),
-  // 电台 - 分类推荐
-  getDJRecommend: (data) => Http({
+})
+
+// 电台 - 分类推荐
+export const getDJRecommend = (data) => Http({
     url: '/dj/recommend/type',
     data
-  }),
-  // 全部电台
-  getRadioHot: (data) => Http({
+})
+
+// 全部电台
+export const getRadioHot = (data) => Http({
     url: '/dj/radio/hot',
     data
-  }),
-  // 所有榜单
-  getTopList: (data) => Http({
+})
+
+// 所有榜单
+export const getTopList = (data) => Http({
     url: '/toplist',
     data
-  })
+})
 
-}

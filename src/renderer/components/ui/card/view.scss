@@ -1,8 +1,8 @@
 @import '../../styles/define.scss';
 
-$prefix = c-card;
+$prefix: c-card;
 
-.{$prefix}{
+.#{$prefix}{
     .c-title-wrap{
         border-bottom: 1px solid $border-color;
         display: flex;

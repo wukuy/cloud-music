@@ -1,43 +1,42 @@
-$primary-color = #e83c3c;
-$info-color = #2d8cf0;
-$defaut-color = #fff;
+$primary-color: #e83c3c;
+$info-color: #2d8cf0;
+$defaut-color: #fff;
 
+$border-color: #e1e1e1;
 // 默认button
-$btn-defualt-border = $border-color;
-$btn-defualt-bg = #fff;
-$btn-default-text = #333;
+$btn-defualt-border: $border-color;
+$btn-defualt-bg: #fff;
+$btn-default-text: #333;
 
 // primary
-$btn-primary-border = $primary-color;
-$btn-primary-bg = $primary-color;
-$btn-primary-text = #fff;
+$btn-primary-border: $primary-color;
+$btn-primary-bg: $primary-color;
+$btn-primary-text: #fff;
 
 // info
-$btn-info-border = $info-color;
-$btn-info-bg = $info-color;
-$btn-info-text = #fff;
+$btn-info-border: $info-color;
+$btn-info-bg: $info-color;
+$btn-info-text: #fff;
 
 // disabled
-$btn-disabled-text = #c5c8ce;
-$btn-disabled-bg = #f7f7f7;
-$btn-disabled-border = #dcdee2;
+$btn-disabled-text: #c5c8ce;
+$btn-disabled-bg: #f7f7f7;
+$btn-disabled-border: #dcdee2;
 
-$border-color = #e1e1e1;
+$border-radius: 4px;
 
-$border-radius = 4px;
+$transition-time: .3s;
 
-$transition-time = .3s;
-
-$border($dir=all, $color=$border-color, $width=1px){
-    if($dir=='all') {
+@mixin border($dir: all, $color: $border-color, $width: 1px){
+    @if($dir=='all') {
         border: $width solid $color;
     }else {
-        border-{$dir}: $width solid $color;
+        border-#{$dir}: $width solid $color;
     }
 }
 
 // 清除浮动
-$clear() {
+@mixin clear() {
     &:after{
         content:"";
         display:block;

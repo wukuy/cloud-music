@@ -16,15 +16,15 @@
                 <div class="p-classes" v-for="(name, id) in songSheetClass.categories">
                     <div class="p-classes-name">{{ name }}</div>
                     <el-radio-group class="p-classes-val" v-model="currentClass" size="small" @change="classesChange">
-                        <template v-if="+id === item.category">
-                            <el-radio-button :label="item.name" v-for="(item, idx) in songSheetClass.sub" :key="idx"></el-radio-button>
+                        <template v-if="+id === item.category" v-for="(item, idx) in songSheetClass.sub">
+                            <el-radio-button :label="item.name" :key="idx"></el-radio-button>
                         </template>
                     </el-radio-group>
                 </div>
             </div>
         </div>
     </el-popover>
-  
+
     <div class="p-hot-sheet-class">
         <div class="p-label">热门标签: </div>
         <ul>

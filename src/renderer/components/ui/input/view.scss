@@ -1,8 +1,8 @@
 @import '../../styles/define.scss';
 
-$prefix = c-input;
+$prefix: c-input;
 
-.{$prefix}{
+.#{$prefix}{
     min-width: 200px;
     display: flex;
     border: 1px solid $border-color;

@@ -7,12 +7,12 @@
         display: flex;
         color: #555;
         ul {
-            $clear();
+            @include clear();
             flex: 1;
             li {
                 float: left;
                 padding: 0 18px;
-                $border(right);
+                @include border(right);
                 color: #686868;
                 &:last-child {
                     border-right: none;
@@ -26,7 +26,7 @@
     .p-title {
         line-height: 50px;
         height: 50px;
-        $border(bottom);
+        @include border(bottom);
         margin-bottom: 10px;
     }
 

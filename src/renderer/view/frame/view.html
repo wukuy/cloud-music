@@ -11,9 +11,9 @@
             <Icon name="github" />
             <Icon name="envelope-o" />
             <Icon name="gear" />
-            <Icon name="window-minimize" title="最小化" />
-            <Icon name="window-maximize" title="最大化" />
-            <Icon name="times" title="关闭" />
+            <Icon name="window-minimize" @click.native="minimizeClick" title="最小化" />
+            <Icon name="window-maximize" @click.native="maximizeClick" title="最大化" />
+            <Icon name="times" @click.native="closeClick" title="关闭" />
         </div>
     </div>
 

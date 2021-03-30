@@ -1,5 +1,5 @@
 <template src="./view.html"></template>
-<style src="./view.styl" lang="stylus" scoped></style>
+<style src="./view.scss" lang="scss" scoped></style>
 
 <script>
 import { getTopList } from '@models/find.js'

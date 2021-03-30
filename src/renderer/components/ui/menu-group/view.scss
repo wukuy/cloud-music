@@ -1,8 +1,8 @@
 @import '../../styles/define.scss';
 
-$prefix = c-menu-group;
+$prefix: c-menu-group;
 
-.{$prefix}{
+.#{$prefix}{
     padding-bottom: 10px;
     &-title{
         height: 32px;

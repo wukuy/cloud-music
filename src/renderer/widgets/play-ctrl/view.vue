@@ -1,5 +1,5 @@
 <template src="./view.html"></template>
-<style src="./view.styl" lang="stylus"></style>
+<style src="./view.scss" lang="scss"></style>
 
 <script>
 import Playlist from '@widgets/play-list/view.vue'

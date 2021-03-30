@@ -6,11 +6,12 @@
     flex-direction: column;
     >.p-title{
         height: 50px;
-        line-height: @height;
+        line-height: height;
         background: $primary-color;
         display: flex;
         color: #fff;
         padding: 0 24px;
+        -webkit-app-region: drag;
         .p-logo{
             width: 178px;
             font-size: 18px;

@@ -3,7 +3,7 @@
 .p-playlist-detail{
     .p-cover-wrap{
         padding: 24px 30px;
-        $clear();
+        @include clear();
         .p-cover-pic{
             width: 200px;
             height: 200px;
@@ -14,7 +14,7 @@
             }
         }
         .p-describe-wrap{
-            overflow hidden;
+            overflow: hidden;
             padding-left: 30px;
             .p-title{
                 font-size: 24px;
@@ -34,7 +34,7 @@
     }
     .p-table{
         .p-music-name,.p-album,.p-singer{
-            $textOverflow();
+            @include textOverflow();
         }
     }
 }

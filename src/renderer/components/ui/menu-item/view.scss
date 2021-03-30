@@ -1,8 +1,8 @@
 @import '../../styles/define.scss';
 
-$prefix = c-menu-item;
+$prefix: c-menu-item;
 
-.{$prefix}{
+.#{$prefix}{
     height: 32px;
     line-height: 32px;
     color: #666;
@@ -10,12 +10,12 @@ $prefix = c-menu-item;
     transition: all .3s;
     cursor: pointer;
     font-size: 12px;
-    &&-active{
+    &-active{
         background: #e8e9ec;
         border-left: 2px solid $primary-color;
         color: #000;
     }
-    &&:hover{
+    &:hover{
         color: #000;
     }
 }

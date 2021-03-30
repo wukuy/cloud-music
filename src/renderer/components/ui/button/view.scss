@@ -1,8 +1,8 @@
 @import '../../styles/define.scss';
 
-$prefix = c-button;
+$prefix: c-button;
 
-$setBtnColor($border, $color, $bg) {
+@mixin setBtnColor($border, $color, $bg) {
     background: $bg;
     color: $color;
     border-color: $border;
@@ -18,7 +18,7 @@ $setBtnColor($border, $color, $bg) {
     }
 }
 
-.{$prefix}{
+.#{$prefix}{
     border-width: 1px;
     border-style: solid;
     font-size: 12px;
@@ -41,7 +41,7 @@ $setBtnColor($border, $color, $bg) {
     }
 
     &-primary{
-        $setBtnColor($btn-primary-border, $btn-primary-text, $primary-color);
+        @include setBtnColor($btn-primary-border, $btn-primary-text, $primary-color);
     }
 
     &-text{
@@ -55,13 +55,13 @@ $setBtnColor($border, $color, $bg) {
     }
 
     &-info{
-        $setBtnColor($btn-info-border, $btn-info-text , $btn-info-bg);
+        @include setBtnColor($btn-info-border, $btn-info-text , $btn-info-bg);
     }
 
     &-circle{
-        border-radius:  @height;
+        border-radius:  height;
         padding: 0;
-        min-width: @height;
+        min-width: height;
         text-align: center;
     }
 
