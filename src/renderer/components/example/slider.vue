@@ -9,12 +9,11 @@
     </div>
 </template>
 <script>
-import {Slider} from '../index';
+import {Slider} from '../index'
 
 export default {
-    components: {
-        Slider
-    }
+  components: {
+    Slider
+  }
 }
-
 </script>

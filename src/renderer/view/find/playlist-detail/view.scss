@@ -1,0 +1,40 @@
+@import '~@assets/css/define.scss';
+
+.p-playlist-detail{
+    .p-cover-wrap{
+        padding: 24px 30px;
+        $clear();
+        .p-cover-pic{
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+            img{
+                width: 100%;
+            }
+        }
+        .p-describe-wrap{
+            overflow hidden;
+            padding-left: 30px;
+            .p-title{
+                font-size: 24px;
+                font-weight: normal;
+                color: #333;
+            }
+            .p-create-date{
+                padding: 14px 0;
+            }
+            .p-operation{
+                >*{
+                    vertical-align: middle;
+                }
+                margin-bottom: 14px;
+            }
+        }
+    }
+    .p-table{
+        .p-music-name,.p-album,.p-singer{
+            $textOverflow();
+        }
+    }
+}

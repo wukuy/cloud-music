@@ -4,12 +4,11 @@
     </div>
 </template>
 <script>
-import {History} from '../index';
+import {History} from '../index'
 
 export default {
-    components: {
-        History
-    }
+  components: {
+    History
+  }
 }
-
 </script>

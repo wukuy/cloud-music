@@ -1,0 +1,39 @@
+@import '../../styles/define.scss';
+
+$prefix = c-table;
+
+.{$prefix}{
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 1px solid $border-color;
+    font-size: 12px;
+    color: #666;
+    table-layout: fixed;
+    &-th-wrap{
+        border-bottom: 1px solid $border-color;
+        height: 30px;
+        line-height: @height;
+        th{
+            border-left: 1px solid $border-color;
+            padding: 0 10px;
+            font-weight: normal;
+            &:first-child{
+                border: 0;
+            }
+        }
+    }
+    &-td-wrap{
+        transition: all .3s;
+        td{
+            padding: 0 10px;
+            height: 28px;
+            line-height: @height;
+        }
+        &:nth-of-type(2n + 1){
+            background: #f5f5f7;
+        }
+        &:hover{
+            background: #ecedee;
+        }
+    }
+}

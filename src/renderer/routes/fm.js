@@ -1,7 +1,7 @@
-import FM from '@view/fm/view.vue';
+import FM from '@view/fm/view.vue'
 
 export default {
-    component: FM,
-    path: '/fm',
-    children: []
+  component: FM,
+  path: '/fm',
+  children: []
 }

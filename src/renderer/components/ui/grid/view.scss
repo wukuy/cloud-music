@@ -1,0 +1,18 @@
+@import '../../styles/define.scss';
+
+$prefix = c-grid;
+
+.{$prefix}{
+    &-row{
+        display: flex;
+    }
+    &-col{
+        flex: 1;
+        &:first-child{
+            margin-left: 0 !important;
+        }
+        img{
+            width: 100%;
+        }
+    }
+}

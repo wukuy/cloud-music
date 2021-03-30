@@ -1,0 +1,21 @@
+@import '../../styles/define.scss';
+
+$prefix = c-menu-item;
+
+.{$prefix}{
+    height: 32px;
+    line-height: 32px;
+    color: #666;
+    padding: 0 24px;
+    transition: all .3s;
+    cursor: pointer;
+    font-size: 12px;
+    &&-active{
+        background: #e8e9ec;
+        border-left: 2px solid $primary-color;
+        color: #000;
+    }
+    &&:hover{
+        color: #000;
+    }
+}

@@ -4,12 +4,11 @@
     </div>
 </template>
 <script>
-import {Search} from '../index';
+import {Search} from '../index'
 
 export default {
-    components: {
-        Search
-    }
+  components: {
+    Search
+  }
 }
-
 </script>

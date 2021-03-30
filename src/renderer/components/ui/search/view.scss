@@ -1,0 +1,22 @@
+@import '../../styles/define.scss';
+
+$prefix = c-search;
+
+.{$prefix}{
+    max-width: 220px;
+    display: inline-block;
+    .c-input{
+        height: 24px;
+        border: none;
+        background: rgba(0,0,0,.2);
+        border-radius: (@height / 2);
+        input{
+            background: rgba(0,0,0,0);
+        }
+    }
+    .c-icon-search{
+        padding-right: 10px;
+        line-height: 22px;
+        color: rgba(255,255,255,.4);
+    }
+}

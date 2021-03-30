@@ -24,12 +24,11 @@
     </div>
 </template>
 <script>
-import {Menu, MenuGroup, MenuItem} from '../index';
+import {Menu, MenuGroup, MenuItem} from '../index'
 
 export default {
-    components: {
-        Menu, MenuGroup, MenuItem
-    }
+  components: {
+    Menu, MenuGroup, MenuItem
+  }
 }
-
 </script>

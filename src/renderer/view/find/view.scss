@@ -1,0 +1,13 @@
+@import '~@assets/css/define.scss';
+
+.p-find{
+    padding: 0 30px;
+    .p-tabs{
+        text-align: center;
+        $border(bottom);
+    }
+    .p-content{
+        max-width: 1045px;
+        margin: 0 auto;
+    }
+}

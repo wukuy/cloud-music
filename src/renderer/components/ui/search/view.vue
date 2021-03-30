@@ -2,22 +2,21 @@
 <style src="./view.styl" lang="stylus"></style>
 
 <script>
-const prefix = 'c-search';
-import Input from '../input/view.vue';
+const prefix = 'c-search'
 
 export default {
-    props: {
-        placeholder: {
-            type: String,
-            default: '搜索音乐，歌手，歌词，用户'
-        }
-    },
-    computed: {
-        classes() {
-            return [
-                prefix,
-            ];
-        }
+  props: {
+    placeholder: {
+      type: String,
+      default: '搜索音乐，歌手，歌词，用户'
     }
+  },
+  computed: {
+    classes () {
+      return [
+        prefix
+      ]
+    }
+  }
 }
 </script>

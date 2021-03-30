@@ -3,12 +3,12 @@
 
 <script>
 export default {
-    data() {
-        return {
-        }
-    },
-    methods: {
+  data () {
+    return {
     }
+  },
+  methods: {
+  }
 }
 </script>
 

@@ -1,0 +1,9 @@
+@import '../../styles/define.scss';
+
+$prefix = c-carousel-item;
+
+.{$prefix}{
+    position: absolute;
+    overflow: hidden;
+    text-align: center;
+}

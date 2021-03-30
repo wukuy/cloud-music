@@ -1,0 +1,24 @@
+@import '../../styles/define.scss';
+
+$prefix = c-card;
+
+.{$prefix}{
+    .c-title-wrap{
+        border-bottom: 1px solid $border-color;
+        display: flex;
+        align-items: center;
+        .c-title{
+            flex: none;
+            color: #333;
+            font-size: 18px;
+            font-weight: 400;
+            padding: 8px 0;
+        }
+        .p-right-slot{
+            flex: 1;
+            color: #666;
+            font-size: 14px;
+            text-align: right;
+        }
+    }
+}

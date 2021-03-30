@@ -39,107 +39,106 @@
     </div>
 </template>
 <script>
-import {Table, TableCol, Icon} from '../index';
+import {Table, TableCol} from '../index'
 
 export default {
-    components: {
-        Table,
-        TableCol,
-    },
-    data() {
-        return {
-            data: []
-        }
-    },
-    mounted() {
-        setTimeout(() => {
-            this.data = [{
-                name: '贼',
-                singer: '戴佩妮',
-                album: '贼',
-                duration: '03:39',
-                test: 'test1'
-            }, {
-                name: '温水',
-                singer: '钰下单',
-                album: '小兵',
-                duration: '04:20',
-                test: 'test2'
-            }, {
-                name: '贼',
-                singer: '戴佩妮',
-                album: '贼',
-                duration: '03:39',
-                test: 'test1'
-            }, {
-                name: '温水',
-                singer: '钰下单',
-                album: '小兵',
-                duration: '04:20',
-                test: 'test2'
-            },{
-                name: '贼',
-                singer: '戴佩妮',
-                album: '贼',
-                duration: '03:39',
-                test: 'test1'
-            }, {
-                name: '温水',
-                singer: '钰下单',
-                album: '小兵',
-                duration: '04:20',
-                test: 'test2'
-            },{
-                name: '贼',
-                singer: '戴佩妮',
-                album: '贼',
-                duration: '03:39',
-                test: 'test1'
-            }, {
-                name: '温水',
-                singer: '钰下单',
-                album: '小兵',
-                duration: '04:20',
-                test: 'test2'
-            },{
-                name: '贼',
-                singer: '戴佩妮',
-                album: '贼',
-                duration: '03:39',
-                test: 'test1'
-            }, {
-                name: '温水',
-                singer: '钰下单',
-                album: '小兵',
-                duration: '04:20',
-                test: 'test2'
-            },{
-                name: '贼',
-                singer: '戴佩妮',
-                album: '贼',
-                duration: '03:39',
-                test: 'test1'
-            }, {
-                name: '温水',
-                singer: '钰下单',
-                album: '小兵',
-                duration: '04:20',
-                test: 'test2'
-            },{
-                name: '贼',
-                singer: '戴佩妮',
-                album: '贼',
-                duration: '03:39',
-                test: 'test1'
-            }, {
-                name: '温水',
-                singer: '钰下单',
-                album: '小兵',
-                duration: '04:20',
-                test: 'test2'
-            },]
-        }, 3000);
+  components: {
+    Table,
+    TableCol
+  },
+  data () {
+    return {
+      data: []
     }
+  },
+  mounted () {
+    setTimeout(() => {
+      this.data = [{
+        name: '贼',
+        singer: '戴佩妮',
+        album: '贼',
+        duration: '03:39',
+        test: 'test1'
+      }, {
+        name: '温水',
+        singer: '钰下单',
+        album: '小兵',
+        duration: '04:20',
+        test: 'test2'
+      }, {
+        name: '贼',
+        singer: '戴佩妮',
+        album: '贼',
+        duration: '03:39',
+        test: 'test1'
+      }, {
+        name: '温水',
+        singer: '钰下单',
+        album: '小兵',
+        duration: '04:20',
+        test: 'test2'
+      }, {
+        name: '贼',
+        singer: '戴佩妮',
+        album: '贼',
+        duration: '03:39',
+        test: 'test1'
+      }, {
+        name: '温水',
+        singer: '钰下单',
+        album: '小兵',
+        duration: '04:20',
+        test: 'test2'
+      }, {
+        name: '贼',
+        singer: '戴佩妮',
+        album: '贼',
+        duration: '03:39',
+        test: 'test1'
+      }, {
+        name: '温水',
+        singer: '钰下单',
+        album: '小兵',
+        duration: '04:20',
+        test: 'test2'
+      }, {
+        name: '贼',
+        singer: '戴佩妮',
+        album: '贼',
+        duration: '03:39',
+        test: 'test1'
+      }, {
+        name: '温水',
+        singer: '钰下单',
+        album: '小兵',
+        duration: '04:20',
+        test: 'test2'
+      }, {
+        name: '贼',
+        singer: '戴佩妮',
+        album: '贼',
+        duration: '03:39',
+        test: 'test1'
+      }, {
+        name: '温水',
+        singer: '钰下单',
+        album: '小兵',
+        duration: '04:20',
+        test: 'test2'
+      }, {
+        name: '贼',
+        singer: '戴佩妮',
+        album: '贼',
+        duration: '03:39',
+        test: 'test1'
+      }, {
+        name: '温水',
+        singer: '钰下单',
+        album: '小兵',
+        duration: '04:20',
+        test: 'test2'
+      }]
+    }, 3000)
+  }
 }
-
 </script>

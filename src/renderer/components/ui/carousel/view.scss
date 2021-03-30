@@ -1,0 +1,45 @@
+@import '../../styles/define.scss';
+
+$prefix = c-carousel;
+
+.{$prefix}{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+    &-wrap{
+        position: relative;
+        transition: all $transition-time;
+        transform: translateX(0);
+        height: 100%;
+    }
+    &-dot-wrap{
+        $clear();
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        >ul{
+            display: inline-block;
+        }
+    }
+    &-dot{
+        float: left;
+        margin: 0 4px;
+        cursor: pointer;
+        padding: 4px 0;
+        &&-actived::after{
+            background: $primary-color;
+        }
+        &::after{
+            content: "";
+            width: 20px;
+            height: 2px;
+            border-radius: 2px;
+            background: rgba(0, 0, 0, .1);
+            display: inline-block;
+        }
+    }
+
+}

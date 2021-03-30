@@ -1,0 +1,17 @@
+@import '~@assets/css/define.scss';
+
+.p-rank-page {
+    padding: 20px 0;
+    .p-list {
+        padding: 20px 0;
+        .p-item {
+            .p-cover-wrap {
+                .p-cover {
+                    height: 90px;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+            }
+        }
+    }
+}

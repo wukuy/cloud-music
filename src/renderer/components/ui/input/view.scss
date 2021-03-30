@@ -1,0 +1,18 @@
+@import '../../styles/define.scss';
+
+$prefix = c-input;
+
+.{$prefix}{
+    min-width: 200px;
+    display: flex;
+    border: 1px solid $border-color;
+    line-height: 36px;
+    input{
+        flex: 1;
+        border: none;
+        padding: 0 10px;
+        outline: none;
+        font-size: 12px;
+        color: $defaut-color;
+    }
+}

@@ -1,0 +1,52 @@
+@import '~@assets/css/define.scss';
+
+.p-song-sheet {
+    padding: 20px 0;
+    .p-hot-sheet-class {
+        padding: 10px 0 20px;
+        display: flex;
+        color: #555;
+        ul {
+            $clear();
+            flex: 1;
+            li {
+                float: left;
+                padding: 0 18px;
+                $border(right);
+                color: #686868;
+                &:last-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+}
+
+.p-song-sheet-class-popover {
+    .p-title {
+        line-height: 50px;
+        height: 50px;
+        $border(bottom);
+        margin-bottom: 10px;
+    }
+
+    .p-class-wrap {
+        .p-content {
+            padding: 0 20px 20px;
+            .p-classes {
+                display: flex;
+                margin-bottom: 10px;
+                .p-classes-name {
+                    width: 80px;
+                }
+                .p-classes-val {
+                    flex: 1;
+                }
+            }
+        }
+        .p-all-song-sheet-btn {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+}

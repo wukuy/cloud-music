@@ -10,12 +10,11 @@
     </div>
 </template>
 <script>
-import {Card} from '../index';
+import {Card} from '../index'
 
 export default {
-    components: {
-        Card
-    }
+  components: {
+    Card
+  }
 }
-
 </script>

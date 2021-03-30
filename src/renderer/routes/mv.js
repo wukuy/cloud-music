@@ -1,7 +1,7 @@
-import MV from '@view/mv/view.vue';
+import MV from '@view/mv/view.vue'
 
 export default {
-    component: MV,
-    path: '/mv',
-    children: []
+  component: MV,
+  path: '/mv',
+  children: []
 }

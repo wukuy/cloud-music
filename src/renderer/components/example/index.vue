@@ -7,71 +7,71 @@
     </div>
 </template>
 <script>
-import ButtonExample from './button.vue';
-import IconExample from './icon.vue';
-import InputExample from './input.vue';
-import SearchExample from './search.vue';
-import CardExample from './card.vue';
-import HistoryExample from './history.vue';
-import MenuExample from './menu.vue';
-import TableExample from './table.vue';
-import TabsExample from './tabs.vue';
-import SliderExample from './slider.vue';
+import ButtonExample from './button.vue'
+import IconExample from './icon.vue'
+import InputExample from './input.vue'
+import SearchExample from './search.vue'
+import CardExample from './card.vue'
+import HistoryExample from './history.vue'
+import MenuExample from './menu.vue'
+import TableExample from './table.vue'
+import TabsExample from './tabs.vue'
+import SliderExample from './slider.vue'
 
 export default {
-    data() {
-        return {
-            currentExample: 'ButtonExample',
-            exampleList: [{
-                text: 'button',
-                exampleName: 'ButtonExample'
-            }, {
-                text: 'icon',
-                exampleName: 'IconExample'
-            }, {
-                text: 'input',
-                exampleName: 'InputExample'
-            }, {
-                text: 'search',
-                exampleName: 'SearchExample'
-            }, {
-                text: 'card',
-                exampleName: 'CardExample'
-            },  {
-                text: 'history',
-                exampleName: 'HistoryExample'
-            }, {
-                text: 'menu',
-                exampleName: 'MenuExample'
-            }, {
-                text: 'table',
-                exampleName: 'TableExample'
-            }, {
-                text: 'tabs',
-                exampleName: 'TabsExample'
-            },  {
-                text: 'slider',
-                exampleName: 'SliderExample'
-            }]
-        }
-    },
-    methods: {
-        setCurrentExample(name) {
-            this.currentExample = name;
-        }
-    },
-    components: {
-        ButtonExample,
-        IconExample,
-        InputExample,
-        SearchExample,
-        CardExample,
-        HistoryExample,
-        MenuExample,
-        TableExample,
-        TabsExample,
-        SliderExample
+  data () {
+    return {
+      currentExample: 'ButtonExample',
+      exampleList: [{
+        text: 'button',
+        exampleName: 'ButtonExample'
+      }, {
+        text: 'icon',
+        exampleName: 'IconExample'
+      }, {
+        text: 'input',
+        exampleName: 'InputExample'
+      }, {
+        text: 'search',
+        exampleName: 'SearchExample'
+      }, {
+        text: 'card',
+        exampleName: 'CardExample'
+      }, {
+        text: 'history',
+        exampleName: 'HistoryExample'
+      }, {
+        text: 'menu',
+        exampleName: 'MenuExample'
+      }, {
+        text: 'table',
+        exampleName: 'TableExample'
+      }, {
+        text: 'tabs',
+        exampleName: 'TabsExample'
+      }, {
+        text: 'slider',
+        exampleName: 'SliderExample'
+      }]
     }
+  },
+  methods: {
+    setCurrentExample (name) {
+      this.currentExample = name
+    }
+  },
+  components: {
+    ButtonExample,
+    IconExample,
+    InputExample,
+    SearchExample,
+    CardExample,
+    HistoryExample,
+    MenuExample,
+    TableExample,
+    TabsExample,
+    SliderExample
+  }
 }
 </script>
 

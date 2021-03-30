@@ -2,24 +2,24 @@
 <style src="./view.styl" lang="stylus"></style>
 
 <script>
-const prefix = 'c-image';
+const prefix = 'c-image'
 
 export default {
-    props: {
-        src: String,
-    },
-    data() {
-        return {
-        }
-    },
-    methods: {
-    },
-    computed: {
-        classes() {
-            return [
-                prefix,
-            ];
-        }
-    },
+  props: {
+    src: String
+  },
+  data () {
+    return {
+    }
+  },
+  methods: {
+  },
+  computed: {
+    classes () {
+      return [
+        prefix
+      ]
+    }
+  }
 }
 </script>

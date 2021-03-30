@@ -11,12 +11,11 @@
     </div>
 </template>
 <script>
-import {Icon} from '../index';
+import {Icon} from '../index'
 
 export default {
-    components: {
-        Icon
-    }
+  components: {
+    Icon
+  }
 }
-
 </script>

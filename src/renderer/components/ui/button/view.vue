@@ -2,41 +2,49 @@
 <style src="./view.styl" lang="stylus"></style>
 
 <script>
-const prefix = 'c-button';
+const prefix = "c-button";
 
 export default {
     props: {
         type: {
             type: String,
-            default: '',
+            default: "",
             validator(val) {
-                return ['', 'primary', 'info', 'text', 'error', 'success', 'warning'].includes(val);
-            }
+                return [
+                    "",
+                    "primary",
+                    "info",
+                    "text",
+                    "error",
+                    "success",
+                    "warning",
+                ].includes(val);
+            },
         },
         // large, small
         size: String,
         disabled: Boolean,
         long: Boolean,
         shape: String,
-        ghost: Boolean
+        ghost: Boolean,
     },
     computed: {
         classes() {
             return [
                 prefix,
-                {[`${prefix}-${this.type}`]: this.type},
-                {[`${prefix}-${this.size}`]: this.size},
-                {[`${prefix}-disabled`]: this.disabled},
-                {[`${prefix}-long`]: this.long},
-                {[`${prefix}-${this.shape}`]: this.shape},
-                {[`${prefix}-ghost`]: this.ghost},
+                { [`${prefix}-${this.type}`]: this.type },
+                { [`${prefix}-${this.size}`]: this.size },
+                { [`${prefix}-disabled`]: this.disabled },
+                { [`${prefix}-long`]: this.long },
+                { [`${prefix}-${this.shape}`]: this.shape },
+                { [`${prefix}-ghost`]: this.ghost },
             ];
-        }
+        },
     },
     methods: {
         handleClick() {
-            this.$emit('click');
-        }
-    }
-}
+            this.$emit("click");
+        },
+    },
+};
 </script>

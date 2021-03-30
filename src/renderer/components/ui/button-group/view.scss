@@ -1,0 +1,22 @@
+@import '../../styles/define.scss';
+
+$prefix = c-button-group;
+
+.{$prefix}{
+    $clear();
+    border-radius: $border-radius;
+    overflow: hidden;
+    display: inline-block;
+    border: 1px solid $border-color;
+    .c-button{
+        float: left;
+        border-radius: 0;
+        border: none;
+    }
+    .c-button + .c-button{
+        border-left: 1px solid $border-color;
+    }
+    .c-button-primary{
+        border-left-color: darken($btn-primary-border, 18%);
+    }
+}

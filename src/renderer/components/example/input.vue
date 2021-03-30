@@ -10,14 +10,13 @@
     </div>
 </template>
 <script>
-import {Input, Icon, Button} from '../index';
+import {Input, Icon, Button} from '../index'
 
 export default {
-    components: {
-        Input,
-        Icon,
-        Button
-    }
+  components: {
+    Input,
+    Icon,
+    Button
+  }
 }
-
 </script>

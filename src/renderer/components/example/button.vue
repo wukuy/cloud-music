@@ -30,12 +30,11 @@
     </div>
 </template>
 <script>
-import {Button, ButtonGroup} from '../index';
+import {Button, ButtonGroup} from '../index'
 
 export default {
-    components: {
-        Button, ButtonGroup
-    }
+  components: {
+    Button, ButtonGroup
+  }
 }
-
 </script>
