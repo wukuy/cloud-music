@@ -6,7 +6,7 @@
     flex-direction: column;
     >.p-title{
         height: 50px;
-        line-height: height;
+        line-height: 50px;
         background: $primary-color;
         display: flex;
         color: #fff;
@@ -32,6 +32,7 @@
                     height: 22px;
                     line-height: 22px;
                     color: rgba(255,255,255, .6);
+                    -webkit-app-region: no-drag;
                 }
                 .c-button+.c-button{
                     border-color: rgba(0,0,0,.2);
@@ -43,6 +44,7 @@
                 width: 24px;
                 text-align: center;
                 cursor: pointer;
+                -webkit-app-region: no-drag;
             }
         }
     }

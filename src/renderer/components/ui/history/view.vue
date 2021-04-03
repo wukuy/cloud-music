@@ -2,25 +2,27 @@
 <style src="./view.scss" lang="scss"></style>
 
 <script>
-const prefix = 'c-history'
+const prefix = "c-history";
 
 export default {
-  props: {
-  },
-  methods: {
-    back () {
-      window.history.back(-1)
+    props: {},
+    methods: {
+        back() {
+            if(this.$route.matched.length > 1) {
+                window.history.back(-1)
+            }
+        },
+        forward() {
+            window.history.forward(1);
+        },
     },
-    forward () {
-      window.history.forward(1)
-    }
-  },
-  computed: {
-    classes () {
-      return [
-        `${prefix}`
-      ]
-    }
-  }
-}
+    created() {
+        console.log(this.$route.matched)
+    },
+    computed: {
+        classes() {
+            return [`${prefix}`];
+        },
+    },
+};
 </script>

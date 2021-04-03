@@ -10,24 +10,24 @@ import PlaylistDetail from '@view/find/playlist-detail/view.vue'
 Vue.use(VueRouter)
 
 let router = new VueRouter({
-  routes: [
-    {
-      path: '/',
-      redirect: '/find'
-    },
-    {
-      path: '/example',
-      component: Example
-    },
-    FindRouter,
-    FMRouter,
-    FriendRouter,
-    MVRouter,
-    {
-      path: '/playlist_detail',
-      component: PlaylistDetail
-    }
-  ]
+    routes: [
+        {
+            path: '/',
+            redirect: '/find'
+        },
+        {
+            path: '/example',
+            component: Example
+        },
+        FindRouter,
+        FMRouter,
+        FriendRouter,
+        MVRouter,
+        {
+            path: '/playlist_detail',
+            component: PlaylistDetail
+        }
+    ]
 })
 
 export default router

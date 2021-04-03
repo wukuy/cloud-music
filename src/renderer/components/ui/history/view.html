@@ -1,7 +1,7 @@
 <div :class="classes">
     <ButtonGroup class="c-record">
         <Button ghost @click="back">
-            <Icon name="chevron-left"></Icon>
+            <Icon name="chevron-left" :class="{ 'c-history-back-linght': $route.matched.length > 1 }"></Icon>
         </Button>
         <Button ghost @click="forward">
             <Icon name="chevron-right"></Icon>
