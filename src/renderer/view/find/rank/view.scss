@@ -7,15 +7,20 @@
         .p-item {
             .p-cover-wrap {
                 .p-cover {
-                    // background-color: opacify($color: $primary-color, $amount: 0.9);
-                    .el-avatar {
-                        height: 60px;
-                        width: 60px;
+                    font-size: 0;
+                    .p-cover-bg {
+                        height: 160px;
                     }
                 }
             }
             .p-play-list {
                 @include border();
+                .p-name {
+                    @include textOverflow();
+                }
+                .p-singer {
+                    @include textOverflow();
+                }
             }
         }
     }

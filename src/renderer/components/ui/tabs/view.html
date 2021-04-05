@@ -1,6 +1,6 @@
 <div :class="classes">
     <ul>
-        <li v-for="(item, idx) in data" @click="handleClick(item, idx)" :class="[`${prefix}-item`, {[`${prefix}-item-active`]: item.$active}]">
+        <li v-for="(item, idx) in data" @click="handleClick(item, idx)" :class="[`${prefix}-item`, {[`${prefix}-item-active`]: item.id === active}]">
             <span v-if="!useSlotScope">{{item.text}}</span>
             <slot v-else :item="item"></slot>
         </li>

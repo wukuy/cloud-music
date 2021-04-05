@@ -6,6 +6,7 @@
         padding: 10px 0 20px;
         display: flex;
         color: #555;
+        align-items: center;
         ul {
             @include clear();
             flex: 1;
@@ -14,8 +15,10 @@
                 padding: 0 18px;
                 @include border(right);
                 color: #686868;
+                font-size: 12px;
                 &:last-child {
                     border-right: none;
+                    padding-right: 0;
                 }
             }
         }

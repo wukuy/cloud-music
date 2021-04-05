@@ -4,10 +4,9 @@ $prefix: c-grid;
 
 .#{$prefix}{
     &-row{
-        display: flex;
+        display: grid;
     }
     &-col{
-        flex: 1;
         &:first-child{
             margin-left: 0 !important;
         }

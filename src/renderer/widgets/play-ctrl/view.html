@@ -5,25 +5,21 @@
         </Button>
         
         <Button class="w-play" shape="circle" type="primary" @click="pauseAndPlay">
-            <Icon :name="play ? 'play' : 'pause'" />
+            <Icon :name="play ? 'pause' : 'play'" />
         </Button>
         
-        <Button class="w-next" shape="circle" type="primary">
+        <Button class="w-next" shape="circle" type="primary" @click="downPlay">
             <Icon name="step-forward" />
         </Button>
     </div>
     <div class="w-play-bar">
-        <audio controls autoplay="autoplay" ref="playDom">
+        <audio @ended="playEnd" @play="play = true" @pause="play = false" controls autoplay="autoplay" ref="playDom">
             <source :src="musicUrl" type="audio/ogg" />
             <source :src="musicUrl" type="audio/mpeg" />
         </audio>
     </div>
-    <div class="w-volume-ctrl">
-        音量控制
-    </div>
     <div class="w-menu">
-        <div>歌词</div>
-        <div @click="openPlayList">歌单</div>
-        <Playlist ref="playList"/>
+        <div @click="showSongWord">歌词</div>
+        <Playlist>歌单</Playlist>
     </div>
 </div>

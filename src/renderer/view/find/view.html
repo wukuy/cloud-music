@@ -1,6 +1,6 @@
 <div class="p-find">
     <div class="p-tabs">
-        <Tabs :data="navList" type="line" @change="tabsChange"></Tabs>
+        <Tabs :data="navList" v-model="currentTab" type="line" @change="tabsChange"></Tabs>
     </div>
     <div class="p-content">
         <router-view></router-view>

@@ -1,20 +1,30 @@
 <template>
     <div>
         <Table :data="data">
-            <!-- <template slot-scope="data">
-                    {{data}}
-                </template> -->
-            <TableCol name="测试" field="test" align="left"></TableCol>
-            <TableCol>
-                <template slot-scope="a">
-                    <Icon name="search" />
-                </template>
-            </TableCol>
-            <TableCol name="操作" width="20%">
+            <TableCol name="音乐名称" field="name" width="20%">
                 <template slot-scope="{fieldData}">
                     {{fieldData}}
                 </template>
             </TableCol>
+            <TableCol name="歌手" field="singer" width="20%">
+                <template slot-scope="{fieldData}">
+                    {{fieldData}}
+                </template>
+            </TableCol>
+            <TableCol name="专辑" field="album" width="20%">
+                <template slot-scope="{fieldData}">
+                    {{fieldData}}
+                </template>
+            </TableCol>
+            <TableCol name="时长" field="duration" width="20%">
+                <template slot-scope="{fieldData}">
+                    {{fieldData}}
+                </template>
+            </TableCol>
+        </Table>
+
+        <H3>表头固定</H3>
+        <Table :data="data" height="100px">
             <TableCol name="音乐名称" field="name" width="20%">
                 <template slot-scope="{fieldData}">
                     {{fieldData}}
@@ -142,3 +152,8 @@ export default {
   }
 }
 </script>
+<style >
+h3 {
+  line-height: 60px;
+}
+</style>

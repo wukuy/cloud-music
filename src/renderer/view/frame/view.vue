@@ -3,7 +3,8 @@
 
 <script>
 import PlayCtrl from "@widgets/play-ctrl/view.vue";
-import { remote } from 'electron'
+import { remote, shell, BrowserWindow } from "electron";
+import packageConfig from "../../../../package.json";
 
 export default {
     data() {
@@ -15,24 +16,24 @@ export default {
                         {
                             name: "发现音乐",
                             icon: "music",
-                            path: "/find",
+                            path: "/find"
                         },
                         {
                             name: "私人FM",
                             icon: "feed",
-                            path: "/fm",
+                            path: "/fm"
                         },
                         {
                             name: "MV",
                             icon: "toggle-right",
-                            path: "/mv",
+                            path: "/mv"
                         },
                         {
                             name: "朋友",
                             icon: "user-o",
-                            path: "/friend",
-                        },
-                    ],
+                            path: "/friend"
+                        }
+                    ]
                 },
                 {
                     classesName: "我的音乐",
@@ -40,14 +41,14 @@ export default {
                         {
                             name: "本地音乐",
                             icon: "feed",
-                            path: "/fm",
+                            path: "/fm"
                         },
                         {
                             name: "下载管理",
                             icon: "feed",
-                            path: "/fm",
-                        },
-                    ],
+                            path: "/fm"
+                        }
+                    ]
                 },
                 {
                     classesName: "创建的歌单",
@@ -55,27 +56,31 @@ export default {
                         {
                             name: "我喜欢的音乐",
                             icon: "feed",
-                            path: "/fm",
-                        },
-                    ],
-                },
+                            path: "/fm"
+                        }
+                    ]
+                }
             ],
             play: false,
+            showFrame: false
         };
     },
     methods: {
         minimizeClick() {
-            remote.getCurrentWindow().minimize()
+            remote.getCurrentWindow().minimize();
         },
         maximizeClick() {
-            if(remote.getCurrentWindow().isMaximized()) {
-                remote.getCurrentWindow().unmaximize()
-            }else {
-                remote.getCurrentWindow().maximize()
+            if (remote.getCurrentWindow().isMaximized()) {
+                remote.getCurrentWindow().unmaximize();
+            } else {
+                remote.getCurrentWindow().maximize();
             }
         },
         closeClick() {
-            remote.app.exit()
+            remote.app.exit();
+        },
+        goGithubHome() {
+            shell.openExternal(packageConfig.homepage);
         }
     },
     computed: {
@@ -90,9 +95,19 @@ export default {
             return this.$store.state.url;
         }
     },
-    components: {
-        PlayCtrl,
+    watch: {
+        $route: {
+            handler(route, a) {
+                const meta = route.meta || {};
+                this.showFrame = !(meta.frame === false);
+            },
+            deep: true,
+            immediate: true
+        }
     },
+    components: {
+        PlayCtrl
+    }
 };
 </script>
 

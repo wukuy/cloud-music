@@ -16,10 +16,59 @@
     }
     .w-play-bar{
         flex: 1;
+        audio {
+            width: 100%;
+
+            &::-webkit-media-controls-panel{
+                background-color: transparent;
+            }
+            &::-webkit-media-controls-mute-button{
+
+            }
+            &::-webkit-media-controls-play-button{
+                display: none;
+            }
+            &::-webkit-media-controls-timeline-container{
+                
+            }
+            &::-webkit-media-controls-current-time-display{
+                
+            }
+            &::-webkit-media-controls-time-remaining-display{
+                
+            }
+            &::-webkit-media-controls-timeline{
+            }
+            &::-webkit-media-controls-volume-slider-container{
+            }
+            &::-webkit-media-controls-volume-slider{
+
+            }
+            &::-webkit-media-controls-seek-back-button{
+
+            }
+            &::-webkit-media-controls-seek-forward-button{
+
+            }
+            &::-webkit-media-controls-fullscreen-button{
+
+            }
+            &::-webkit-media-controls-rewind-button{
+
+            }
+            &::-webkit-media-controls-return-to-realtime-button{
+                
+            }
+            &::-webkit-media-controls-toggle-closed-captions-button{
+
+            }
+        }
     }
     .w-menu{
         >*{
             display: inline-block;
+            margin-left: 10px;
+            color: #666;
         }
     }
 }

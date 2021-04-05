@@ -1,5 +1,5 @@
 <div class="p-home">
-    <div class="p-title">
+    <div class="p-title" v-if="showFrame">
         <div class="p-logo">
             网易云音乐
         </div>
@@ -8,7 +8,7 @@
             <Search />
         </div>
         <div class="p-menu">
-            <Icon name="github" />
+            <Icon name="github" @click.native="goGithubHome" />
             <Icon name="envelope-o" />
             <Icon name="gear" />
             <Icon name="window-minimize" @click.native="minimizeClick" title="最小化" />
@@ -18,7 +18,7 @@
     </div>
 
     <div class="p-main">
-        <div class="p-nav">
+        <div class="p-nav" v-if="showFrame">
             <Menu>
                 <MenuGroup :title="item.classesName"  v-for="(item, idx) in navList" :key="idx">
                     <MenuItem v-for="(menu, idx) in item.menus" :key="idx">
@@ -31,10 +31,13 @@
             </Menu>
         </div>
         <div class="p-content">
-            <!-- <p><a href="/#/example" rel="noopener noreferrer">example</a></p> -->
+            <router-link to="/example">
+                <el-button class="example" circle type="primary">E</el-button>
+            </router-link>
+        
             <router-view></router-view>
         </div>
     </div>
 
-    <PlayCtrl />
+    <PlayCtrl v-if="showFrame" />
 </div>

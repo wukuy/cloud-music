@@ -1,15 +1,21 @@
-<div class="w-play-list" v-if="showList">
-    <div>播放列表</div>
-    <div>播放列表</div>
-    <div>播放列表</div>
-    <div>播放列表</div>
-    <div>播放列表</div>
-    <div>播放列表</div>
-    <div>播放列表</div>
-    <div>播放列表</div>
-    <div>播放列表</div>
-    <div>播放列表</div>
-    <div>播放列表</div>
-    <div>播放列表</div>
-    <div>播放列表</div>
-</div>
+<el-popover popper-class="w-play-list" placement="bottom-start" width="560">
+    <Tabs :data="tabsCardData" v-model="currentCard" type="card" class="w-tabs-card"></Tabs>
+    <Table :data="playList" @click="tabRowClick" height="424px">
+        <TableCol :name="`音乐名称(${playList.length})`" field="name">
+            <template slot-scope="{fieldData}">
+                <div class="p-music-name">{{fieldData}}</div>
+            </template>
+        </TableCol>
+        <TableCol name="歌手" field="singer">
+            <template slot-scope="{ item }">
+                <div class="p-singer">
+                    <template v-for="(item, idx) in item.ar">{{ item.name }}</template>
+                </div>
+            </template>
+        </TableCol>
+    </Table>
+
+    <div slot="reference">
+        <slot></slot>
+    </div>
+</el-popover>

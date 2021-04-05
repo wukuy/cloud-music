@@ -4,11 +4,14 @@ $prefix: c-table;
 
 .#{$prefix}{
     width: 100%;
-    border-collapse: collapse;
     border-top: 1px solid $border-color;
     font-size: 12px;
     color: #666;
     table-layout: fixed;
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
     &-th-wrap{
         border-bottom: 1px solid $border-color;
         height: 30px;

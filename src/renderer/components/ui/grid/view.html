@@ -1,6 +1,6 @@
 <div :class="classes">
-    <ul v-for="(row, idx) in list" :key="idx" :class="`${prefix}-row`">
-        <li v-for="(item, idx) in row" :key="idx" :class="`${prefix}-col`" :style="{marginLeft: horizontalAxisPadding, marginBottom: verticalAxisPadding}">
+    <ul :class="`${prefix}-row`" :style="styles">
+        <li v-for="(item, idx) in list" :key="idx" :class="`${prefix}-col`">
             <slot :idx="idx" :index="idx" :item="item"></slot>
         </li>
     </ul>

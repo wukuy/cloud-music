@@ -7,33 +7,33 @@ import Rank from '@view/find/rank/view.vue'
 import NewMusic from '@view/find/new-music/view.vue'
 
 export default {
-  component: Find,
-  path: '/find',
-  redirect: '/find/recommend',
-  children: [
-    {
-      component: Recommend,
-      path: 'recommend'
-    },
-    {
-      component: SongSheet,
-      path: 'song-sheet'
-    },
-    {
-      component: Radio,
-      path: 'radio'
-    },
-    {
-      component: Singer,
-      path: 'singer'
-    },
-    {
-      component: Rank,
-      path: 'rank'
-    },
-    {
-      component: NewMusic,
-      path: 'new-music'
-    }
-  ]
+	component: Find,
+	path: '/find',
+	redirect: '/find/recommend',
+	children: [
+		{
+			component: Recommend,
+			path: 'recommend'
+		},
+		{
+			component: SongSheet,
+			path: 'song-sheet'
+		},
+		{
+			component: Radio,
+			path: 'radio'
+		},
+		{
+			component: Singer,
+			path: 'singer'
+		},
+		{
+			component: Rank,
+			path: 'rank'
+		},
+		{
+			component: NewMusic,
+			path: 'new-music'
+		}
+	]
 }

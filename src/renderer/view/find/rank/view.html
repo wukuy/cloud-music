@@ -4,16 +4,27 @@
             <div class="p-item" slot-scope="{ item }">
                 <div class="p-cover-wrap">
                     <div class="p-cover">
-                        <el-avatar fit="cover" :src="item.coverImgUrl"></el-avatar>
+                        <el-image class="p-cover-bg" fit="cover" :src="item.coverImgUrl"></el-image>
                     </div>
                 </div>
                 <div class="p-play-list">
-                    <ul>
-                        <li class="p-play-item" v-for="(playItem, idx) in item.playList" :key="idx">
-                            {{ playItem.name }}
-                            {{ playItem.nickname }}
-                        </li>
-                    </ul>
+                    <Table :data="item.playList.slice(0, 8)" :useHeader="false" @click="playListClick($event, item.playList)">
+                        <TableCol name="音乐名称" field="name">
+                            <div class="p-name"  slot-scope="{ idx, fieldData }">
+                                {{ idx + 1 }}
+                                {{ fieldData }}
+                            </div>
+                        </TableCol>
+                        <TableCol name="歌手">
+                            <template slot-scope="{ item }">
+                                <div class="p-singer">
+                                    <template v-for="(item, idx) in item.ar">
+                                        {{ item.name }}
+                                    </template>
+                                </div>
+                            </template>
+                        </TableCol>
+                    </Table>
                 </div>
             </div>
         </Grid>
